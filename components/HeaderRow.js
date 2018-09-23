@@ -1,5 +1,18 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import React from 'react';
+
+const fallFromLeft = keyframes`
+  0% {
+    transform: rotate(-90deg);
+    transform-origin: left;
+  }`;
+
+const fallFromRight = keyframes`
+  0% {
+    transform: rotate(90deg);
+    transform-origin: right;
+  }
+`;
 
 const HeaderRow = styled.div`
   display: flex;
@@ -8,6 +21,7 @@ const HeaderRow = styled.div`
   margin: ${props => (props.barRight ? '10px 0 10px auto' : '10px auto 10px 0')};
   min-height: 60px;
   vertical-align: middle;
+  animation: ${props => (props.barRight ? `${fallFromRight} .4s forwards` : `${fallFromLeft} .4s forwards`)};
 
   .blackBar {
     order: ${props => (props.barRight ? null : -1)};

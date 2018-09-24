@@ -18,7 +18,11 @@ const slide = (fromRight = false) => {
   return keyframes`
     0% {
       transform: translate(${!fromRight && '-'}75vw);
-    }`;
+    }
+    100% {
+      transform: none;
+    }
+    `;
 };
 
 const HeaderRow = styled.div`
@@ -36,7 +40,7 @@ const HeaderRow = styled.div`
     }${slide(Boolean(props.barRight))};
     `)};
   animation-duration: ${props => (
-    `${props.delay ? (`${props.delay}, `) : null}1s`
+    `${props.delay ? (`${props.delay}, `) : null}1.2s`
   )};
   animation-delay: ${props => (props.delay ? `0s, ${props.delay}` : '0s')};
   animation-fill-mode: forwards;

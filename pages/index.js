@@ -11,6 +11,28 @@ const dropIn = keyframes`
   0% {
     transform: translatey(-100vh);
   }
+  100% {
+    transform: none;
+  }
+`;
+
+const hide = keyframes`
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: initial;
+  }
+  `;
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    visibility: initial;
+    opacity: 1;
+  }
 `;
 
 const HomePage = styled.div`
@@ -18,6 +40,10 @@ const HomePage = styled.div`
     margin: 0 auto;
     * {
         box-sizing: border-box;
+    }
+    .main-head {
+      visibility: hidden;
+      animation: ${fadeIn} 1s ease-out .3s forwards;
     }
     .main-content {
       display: flex;
@@ -40,7 +66,10 @@ const HomePage = styled.div`
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      visibility: hidden;
       font-family: 'Nova Flat', 'sans serif';
+      animation: ${hide} .3s;
+      animation: ${fadeIn} .6s ease-out .3s forwards;
       h3 {
         font-size: 3.8rem;
       }
@@ -53,10 +82,10 @@ const HomePage = styled.div`
 export default () => (
   <Layout>
     <HomePage>
-      <Header delay=".4s">
+      <Header delay=".2s">
         {
           ({ delay }) => [
-            <h1>Kam Bowman</h1>,
+            <h1 className="main-head">Kam Bowman</h1>,
             <HeaderRow delay={delay}>
               <h2>Web Development</h2>
             </HeaderRow>,

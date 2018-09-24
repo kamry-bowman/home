@@ -5,11 +5,12 @@
     "next": "next",
     "dev": "next",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "debug": "next --inspect"
   },
   "dependencies": {
-    "next": "^6.1.2",
+    "next": "^7.0.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "shortid": "^2.2.13",

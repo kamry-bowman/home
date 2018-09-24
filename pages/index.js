@@ -6,6 +6,7 @@ import Layout from '../components/Layout';
 import HeaderRow from '../components/HeaderRow';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import MediaIcon from '../components/MediaIcon';
 import skillArr from '../data/skills';
 
 const dropIn = keyframes`
@@ -119,10 +120,14 @@ export default () => (
         </div>
       </div>
       <Footer>
-        <p>Copyright 2018 Kam Bowman</p>
-        {/* <SocialBar>
-          
-        </SocialBar> */}
+        <div className="social-box">
+          <MediaIcon imgsrc="static/github.svg" target="#" />
+          <MediaIcon imgsrc="static/twitter.svg" target="#" />
+          <MediaIcon imgsrc="static/linkedin.svg" target="#" />
+        </div>
+        <div className="copyright">
+          <p>Copyright 2018 Kam Bowman</p>
+        </div>
       </Footer>
     </HomePage>
   </Layout>

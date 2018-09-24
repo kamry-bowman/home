@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{220:function(o,n,p){__NEXT_REGISTER_PAGE("/portolio",function(){return o.exports=p(221),{page:o.exports.default}})},221:function(o,n){}},[[220,0]]]);

@@ -13,8 +13,8 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <title>My page</title>
-          <meta name="viewport" content="width=device=width, initial-scale=1" />
+          <title>Kam Bowman</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Nova+Flat" rel="stylesheet"/>
           {this.props.styleTags}
         </Head>

@@ -30,7 +30,7 @@ const HomePage = styled.div`
       }
     }
     .main-img {
-      animation: ${dropIn} .6s cubic-bezier(.46,1.68,.68,.33);
+      animation: ${dropIn} .5s cubic-bezier(.46,1.68,.68,.33);
       img {
         width: 100%;
       }
@@ -53,7 +53,7 @@ const HomePage = styled.div`
 export default () => (
   <Layout>
     <HomePage>
-      <Header delay=".6s">
+      <Header delay=".4s">
         {
           ({ delay }) => [
             <h1>Kam Bowman</h1>,

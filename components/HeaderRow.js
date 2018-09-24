@@ -1,17 +1,25 @@
 import styled, { keyframes } from 'styled-components';
 import React from 'react';
 
-const slideFromLeft = keyframes`
-  0% {
-    transform: translate(-75vw);
 
-  }`;
+const wait = (fromRight = false) => {
+  return keyframes`
+    from {
+      transform: translate(${!fromRight && '-'}75vw);
+    }
+    
+    to {
+      transform: translate(${!fromRight && '-'}75vw);
+    }
+    `;
+};
 
-const slideFromRight = keyframes`
-  0% {
-    transform: translate(75vw);
-  }
-`;
+const slide = (fromRight = false) => {
+  return keyframes`
+    0% {
+      transform: translate(${!fromRight && '-'}75vw);
+    }`;
+};
 
 const HeaderRow = styled.div`
   display: flex;
@@ -20,7 +28,18 @@ const HeaderRow = styled.div`
   margin: ${props => (props.barRight ? '10px 0 10px auto' : '10px auto 10px 0')};
   min-height: 60px;
   vertical-align: middle;
-  animation: ${props => (props.barRight ? `${slideFromRight} .4s ${props.delay} forwards` : `${slideFromLeft} .4s ${props.delay} forwards`)};
+  animation-name: ${props => (
+    `${
+      props.delay
+        ? `${wait(Boolean(props.barRight))}, `
+        : null
+    }${slide(Boolean(props.barRight))};
+    `)};
+  animation-duration: ${props => (
+    `${props.delay ? (`${props.delay}, `) : null}1s`
+  )};
+  animation-delay: ${props => (props.delay ? `0s, ${props.delay}` : '0s')};
+  animation-fill-mode: forwards;
 
   .blackBar {
     order: ${props => (props.barRight ? null : -1)};
@@ -34,9 +53,11 @@ const HeaderRow = styled.div`
   }
 `;
 
-export default ({ barRight, delay = 0, children, ...rest }) => (
+export default ({
+  barRight, delay = 0, children, ...rest
+}) => (
   <HeaderRow barRight={Boolean(barRight)} delay={delay}>
-    { typeof children === 'function' ? children({ barRight, ...rest }) : children }
-    <div className="blackBar"/>
+    {typeof children === 'function' ? children({ barRight, ...rest }) : children}
+    <div className="blackBar" />
   </HeaderRow>
 );

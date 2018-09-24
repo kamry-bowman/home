@@ -2,9 +2,11 @@
   "name": "with-styled-components",
   "version": "1.0.0",
   "scripts": {
+    "next": "next",
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "debug": "next --inspect"
   },
   "dependencies": {
     "next": "^6.1.2",

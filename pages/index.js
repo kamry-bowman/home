@@ -86,24 +86,26 @@ export default () => (
     <HomePage>
       <Header delay=".2s">
         {
-          ({ delay }) => [
-            <h1 className="main-head">Kam Bowman</h1>,
-            <HeaderRow delay={delay}>
-              <h2>Web Development</h2>
-            </HeaderRow>,
-            <nav>
-              <HeaderRow barRight delay={delay}>
-                <Link href="portfolio">
-                  <a>Portfolio</a>
-                </Link>
-              </HeaderRow>
+          ({ delay }) => (
+            <React.Fragment>
+              <h1 className="main-head">Kam Bowman</h1>
               <HeaderRow delay={delay}>
-                <Link href="blog">
-                  <a>Blog</a>
-                </Link>
+                <h2>Web Development</h2>
               </HeaderRow>
-            </nav>,
-          ]
+              <nav>
+                <HeaderRow barRight delay={delay}>
+                  <Link href="portfolio">
+                    <a>Portfolio</a>
+                  </Link>
+                </HeaderRow>
+                <HeaderRow delay={delay}>
+                  <Link href="blog">
+                    <a>Blog</a>
+                  </Link>
+                </HeaderRow>
+              </nav>
+            </React.Fragment>
+          )
         }
       </Header>
       <div className="main-content">

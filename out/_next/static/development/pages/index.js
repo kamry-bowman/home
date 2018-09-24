@@ -18,13 +18,13 @@ var _jsxFileName = "C:\\Users\\kamdu\\Documents\\web-development\\personal-proje
 var Footer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Footer",
   componentId: "sc-1xm0izr-0"
-})(["width:100%;max-width:850px;height:160px;margin:0 auto;background-color:black;"]);
+})(["width:100%;max-width:850px;margin:20px auto 0;background-color:black;color:white;display:flex;flex-direction:column;justify-content:space-between;align-items:center;font-family:arial,'sans serif';padding:25px;.social-box{width:100%;display:flex;justify-content:space-around;align-items:center;padding:30px 0 30px}.copyright{display:flex;justify-content:center;align-items:flex-end;p{}}"]);
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var children = _ref.children;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Footer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 34
     },
     __self: this
   }, children);
@@ -182,6 +182,51 @@ Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["injectGlobal"])(_template
       rest = _objectWithoutProperties(_ref, ["children"]);
 
   return typeof children === 'function' ? children(rest) : children;
+});
+
+/***/ }),
+
+/***/ "./components/MediaIcon.js":
+/*!*********************************!*\
+  !*** ./components/MediaIcon.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var _jsxFileName = "C:\\Users\\kamdu\\Documents\\web-development\\personal-projects\\homepage\\homepage\\components\\MediaIcon.js";
+
+
+var MediaIcon = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "MediaIcon",
+  componentId: "iotiz5-0"
+})(["width:50px;height:50px;img{width:100%;}"]);
+/* harmony default export */ __webpack_exports__["default"] = (function (props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MediaIcon, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: props.target,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: props.imgsrc,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  })));
 });
 
 /***/ }),
@@ -15172,8 +15217,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_HeaderRow__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/HeaderRow */ "./components/HeaderRow.js");
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Header */ "./components/Header.js");
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
-/* harmony import */ var _data_skills__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../data/skills */ "./data/skills.js");
+/* harmony import */ var _components_MediaIcon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/MediaIcon */ "./components/MediaIcon.js");
+/* harmony import */ var _data_skills__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../data/skills */ "./data/skills.js");
 var _jsxFileName = "C:\\Users\\kamdu\\Documents\\web-development\\personal-projects\\homepage\\homepage\\pages\\index.js";
+
 
 
 
@@ -15194,48 +15241,54 @@ var HomePage = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.wit
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 85
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HomePage, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 86
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_6__["default"], {
     delay: ".2s",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 87
     },
     __self: this
   }, function (_ref) {
     var delay = _ref.delay;
-    return [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 90
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
       className: "main-head",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89
+        lineNumber: 91
       },
       __self: this
     }, "Kam Bowman"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_HeaderRow__WEBPACK_IMPORTED_MODULE_5__["default"], {
       delay: delay,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90
+        lineNumber: 92
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 93
       },
       __self: this
     }, "Web Development")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93
+        lineNumber: 95
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_HeaderRow__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -15243,55 +15296,55 @@ var HomePage = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.wit
       delay: delay,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 94
+        lineNumber: 96
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
       href: "portfolio",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 95
+        lineNumber: 97
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 96
+        lineNumber: 98
       },
       __self: this
     }, "Portfolio"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_HeaderRow__WEBPACK_IMPORTED_MODULE_5__["default"], {
       delay: delay,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 101
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
       href: "blog",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100
+        lineNumber: 102
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101
+        lineNumber: 103
       },
       __self: this
-    }, "Blog"))))];
+    }, "Blog")))));
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "main-content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 111
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "main-img",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 112
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -15299,50 +15352,88 @@ var HomePage = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.wit
     alt: "",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 113
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "main-txt",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 115
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 116
     },
     __self: this
   }, "I build websites with"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
+      lineNumber: 117
     },
     __self: this
-  }, _data_skills__WEBPACK_IMPORTED_MODULE_8__["default"].map(function (skill, id) {
+  }, _data_skills__WEBPACK_IMPORTED_MODULE_9__["default"].map(function (skill, id) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       key: shortid__WEBPACK_IMPORTED_MODULE_3___default.a.generate(),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 116
+        lineNumber: 119
       },
       __self: this
     }, skill);
   })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121
+      lineNumber: 124
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "social-box",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 125
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_MediaIcon__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    imgsrc: "static/github.svg",
+    target: "#",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 126
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_MediaIcon__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    imgsrc: "static/twitter.svg",
+    target: "#",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 127
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_MediaIcon__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    imgsrc: "static/linkedin.svg",
+    target: "#",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 128
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "copyright",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 130
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122
+      lineNumber: 131
     },
     __self: this
-  }, "Copyright 2018 Kam Bowman"))));
+  }, "Copyright 2018 Kam Bowman")))));
 });
     (function (Component, route) {
       if(!Component) return

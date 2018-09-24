@@ -5,6 +5,7 @@ import shortid from 'shortid';
 import Layout from '../components/Layout';
 import HeaderRow from '../components/HeaderRow';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import skillArr from '../data/skills';
 
 const dropIn = keyframes`
@@ -117,6 +118,12 @@ export default () => (
           </ul>
         </div>
       </div>
+      <Footer>
+        <p>Copyright 2018 Kam Bowman</p>
+        {/* <SocialBar>
+          
+        </SocialBar> */}
+      </Footer>
     </HomePage>
   </Layout>
 );

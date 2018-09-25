@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes, injectGlobal } from 'styled-components';
+import styled, { keyframes, ThemeProvider, injectGlobal } from 'styled-components';
 import Link from 'next/link';
 import shortid from 'shortid';
 import Layout from '../components/Layout';
@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MediaIcon from '../components/MediaIcon';
 import skillArr from '../data/skills';
+import sizes from '../data/sizes';
 
 const dropIn = keyframes`
   0% {
@@ -49,12 +50,18 @@ const HomePage = styled.div`
     }
     .main-content {
       display: flex;
+      flex-wrap: wrap;
       width: 100%;
       max-width: 850px;
       margin: 0 auto;
 
       & > div {
         width: 49%;
+        
+        @media (max-width: ${sizes.tablet}) {
+          width: 100%;
+          margin-bottom: 60px;
+        }
       }
     }
     .main-img {
@@ -89,7 +96,7 @@ export default () => (
           ({ delay }) => (
             <React.Fragment>
               <h1 className="main-head">Kam Bowman</h1>
-              <HeaderRow delay={delay}>
+              <HeaderRow titleMorph="left" delay={delay}>
                 <h2>Web Development</h2>
               </HeaderRow>
               <nav>

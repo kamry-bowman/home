@@ -10,11 +10,21 @@ import MediaIcon from '../components/MediaIcon';
 import ProjectCard from '../components/ProjectCard';
 import CircleLine from '../components/CircleLine';
 
+import sizes from '../data/sizes';
+
 const Portfolio = styled.div`
     .card {
+      max-width: 90%;
+      @media (max-width: ${sizes.tablet}) {
+        max-width: 100%;
+      }
+      margin: 0 auto;
       h1 {
         text-align: center;
         font-size: 4rem;
+        @media (max-width: ${sizes.mobile}) {
+          font-size: 3.4rem;
+        }
       }
       
       p {
@@ -28,12 +38,28 @@ const Portfolio = styled.div`
       justify-content: center;
       border-radius: 10px;
       border: 15px solid black;
+
       padding: 60px;
+      @media (max-width: ${sizes.tablet}) {
+        padding-left: 10%;
+        padding-right: 10%;
+        border-radius: 0;
+        border-width: 25px;
+      }
+
+      @media (max-width: ${sizes.mobile}) {
+        padding-left: 5%;
+        padding-right: 5%;
+        border-radius: 0;
+        border-width: 5%;
+      }
+
       background-color: lightgray;
     }
 
     .intro-text {
-      width: 40%;
+      min-width: 40%;
+      max-width: 500px;
       margin: 80px auto 0;
       display: flex;
       flex-direction: column;

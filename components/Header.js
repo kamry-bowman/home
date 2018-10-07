@@ -59,8 +59,12 @@ const Header = styled.div`
     &.active {
       color: white;
       background-color: black;
+      
+      @media (min-width: ${sizes.mobile}) {
       font-size: 5rem;
       padding: 3rem;
+      }
+
     }
 
   }

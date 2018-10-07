@@ -1,9 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import sizes from '../data/sizes';
+
 const ProjectCard = styled.section.attrs({
   className: props => props.className || undefined,
 })`
+
+  display: flex;
+  flex-wrap: wrap;
 
   .image-content {
     display: flex;
@@ -13,6 +18,15 @@ const ProjectCard = styled.section.attrs({
     img {
       border: 40px solid black;
       border-radius: 15px;
+
+      @media (max-width: ${sizes.tablet}) {
+        border-width: 20px;
+      }
+
+      @media (max-width: ${sizes.mobile}) {
+        border-width: 2px;
+        max-width: 90%;
+      }
     }
 
     a {
@@ -30,8 +44,25 @@ const ProjectCard = styled.section.attrs({
     width: 360px;
     padding: 0 20px;
     display: flex;
+
+    @media (max-width: ${sizes.mobile}) {
+      width: 100%;
+      padding: 0 2.5%;
+    }
+
     flex-direction: column;
     justify-content: space-around;
+    
+    & > * {
+      padding-bottom: 60px;
+
+    &:last-child {
+      padding-bottom: 10px;
+    }
+
+    }
+
+    & > 
 
      p {
        text-align: center;
@@ -57,6 +88,12 @@ const ProjectCard = styled.section.attrs({
 
   &>div {
     padding: 30px;
+    
+    @media (max-width: ${sizes.mobile}) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
   }
 `;
 

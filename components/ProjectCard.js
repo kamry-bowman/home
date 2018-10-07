@@ -7,15 +7,52 @@ const ProjectCard = styled.section.attrs({
 
   .image-content {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 
     img {
       border: 40px solid black;
       border-radius: 15px;
     }
+
+    a {
+      margin-top: 30px;
+      color: black;
+      font-size: 2.2rem;
+
+      &:visited {
+        color: gray;
+      }
+    }
   }
 
   .text-content {
+    width: 360px;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+     p {
+       text-align: center;
+     } 
+  }
+  
+  .tech {
+      h2, li {
+        font-family: 'Nova Flat', 'sans serif';
+      }
+      
+     text-align: center; 
+      
+      h2 {
+        margin-bottom: 1rem;
+      }
+
+     li {
+      font-size: 2rem; 
+      list-style-type: none;
+     }
   }
 
   &>div {
@@ -37,7 +74,7 @@ export default ({
       <p>
         {description}
       </p>
-      <section>
+      <section className="tech">
         <h2>Technology</h2>
         <ul>
           {technology.map((tech, index) => (
@@ -46,11 +83,11 @@ export default ({
             </li>
           ))}
         </ul>
-      <a href={url}>Visit</a>
       </section>
     </div>
     <div className="image-content">
         <img src={`/static/${img}`} alt="" />
+        <a href={url}>Visit</a>
     </div>
   </ProjectCard>
 );

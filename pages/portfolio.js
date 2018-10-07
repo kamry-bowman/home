@@ -12,11 +12,23 @@ import CircleLine from '../components/CircleLine';
 
 const Portfolio = styled.div`
     .card {
+      h1 {
+        text-align: center;
+        font-size: 4rem;
+      }
+      
+      p {
+        font-family: arial, 'sans serif';
+        font-size: 2rem;
+        font-style: italic;
+      }
+
+
       display: flex;
       justify-content: center;
       border-radius: 10px;
       border: 15px solid black;
-      padding: 50px;
+      padding: 60px;
       background-color: lightgray;
     }
 
@@ -25,6 +37,12 @@ const Portfolio = styled.div`
       margin: 80px auto 0;
       display: flex;
       flex-direction: column;
+
+        h1 {
+          margin-bottom: 40px;
+
+        }
+
     }
 
   .gallery {

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes, ThemeProvider, injectGlobal } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Link from 'next/link';
 import shortid from 'shortid';
 import Layout from '../components/Layout';
@@ -39,11 +39,6 @@ const fadeIn = keyframes`
 `;
 
 const HomePage = styled.div`
-    width: 100%;
-    margin: 0 auto;
-    * {
-        box-sizing: border-box;
-    }
     .main-head {
       visibility: hidden;
       animation: ${fadeIn} 1s ease-out .3s forwards;
@@ -101,7 +96,7 @@ export default () => (
               </HeaderRow>
               <nav>
                 <HeaderRow barRight delay={delay}>
-                  <Link href="portfolio">
+                  <Link href="/portfolio">
                     <a>Portfolio</a>
                   </Link>
                 </HeaderRow>

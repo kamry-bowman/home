@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import sizes from '../data/sizes';
 
 const Header = styled.div`
-  font-family: 'Archivo Black', sans-serif;
   h1 {
     font-size: 8.4rem;
     margin-top: 5px;
@@ -57,9 +56,13 @@ const Header = styled.div`
       background-color: black;
     }
 
-    &:visited {
-      color: darkslategray;
+    &.active {
+      color: white;
+      background-color: black;
+      font-size: 5rem;
+      padding: 3rem;
     }
+
   }
 
 `;

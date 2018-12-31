@@ -1,12 +1,9 @@
 export default [
   {
     name: 'S & J Architecture',
-    description: 'A responsive small business website built using pure html, css, and vanilla javascript.',
-    technology: [
-      'HTML',
-      'CSS',
-      'Javascript',
-    ],
+    description:
+      'A responsive small business website built using pure html, css, and vanilla javascript.',
+    technology: ['HTML', 'CSS', 'Javascript'],
     url: 'https://kbowman-architecture.netlify.com',
     img: 'arch-bw-300.gif',
   },
@@ -21,7 +18,7 @@ export default [
       'Express',
       'Postgresql',
     ],
-    url: 'https://nervous-leakey-9c1090.netlify.com',
+    url: 'https://kam-lambda-notes.netlify.com/',
     img: 'notes-bw-300.gif',
   },
 ];

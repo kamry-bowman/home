@@ -135,9 +135,9 @@ export default () => (
       </div>
       <Footer>
         <div className="social-box">
-          <MediaIcon imgsrc="static/github.svg" target="https://github.com/kamry-bowman" />
-          <MediaIcon imgsrc="static/twitter.svg" target="https://twitter.com/MispelledToyota" />
-          <MediaIcon imgsrc="static/linkedin.svg" target="https://linkedin.com/in/kamry-bowman" />
+          <MediaIcon imgsrc="/static/github.svg" target="https://github.com/kamry-bowman" />
+          <MediaIcon imgsrc="/static/twitter.svg" target="https://twitter.com/MispelledToyota" />
+          <MediaIcon imgsrc="/static/linkedin.svg" target="https://linkedin.com/in/kamry-bowman" />
         </div>
         <div className="copyright">
           <p>Copyright 2018 Kam Bowman</p>

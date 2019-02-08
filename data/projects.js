@@ -8,6 +8,29 @@ export default [
     img: 'arch-bw-300.gif',
   },
   {
+    name: 'Cadence Shift Scheduler',
+    description: `Built out on a team of 5, this is full-stack web application features drag and drop shift scheduling for small businesses. It features an attractive design, shift validation, coverage calculation, and is supported by a combination of React, Firebase, and postgresql.`,
+    url: 'http://getcadence.co',
+    img: 'cadence-bw-300.gif',
+    technology: [
+      'React',
+      'Emotion',
+      'Redux',
+      'Express',
+      'Postgresql',
+      'Jest',
+      'React Testing Library',
+      'Firebase Auth',
+    ],
+  },
+  {
+    name: 'Towelify',
+    description: `Named in honor of Douglas Adams, this Hackathon project is an opinionated React npm module aiming at creating some of Bootstrap's greatest hits using the render props pattern.`,
+    technology: ['React'],
+    url: 'https://github.com/TowelJS/Towelify',
+    img: 'towelify-bw-300.gif',
+  },
+  {
     name: 'Lambda Notes',
     description: `Note Management System built using React and Redux front-end, with an Express back-end supported by postgresql.
     I implemented doubly linked list as the data structure to support ordered cards, which was a lot of fun.`,
@@ -17,15 +40,9 @@ export default [
       'Redux',
       'Express',
       'Postgresql',
+      'Jest',
     ],
     url: 'https://kam-lambda-notes.netlify.com/',
     img: 'notes-bw-300.gif',
-  },
-  {
-    name: 'Towelify',
-    description: `Named in honor of Douglas Adams, this Hackathon project is an opinionated React npm module aiming at creating some of Bootstrap's greatest hits using the render props pattern.`,
-    technology: ['React'],
-    url: 'https://github.com/TowelJS/Towelify',
-    img: 'towelify-bw-300.gif',
   },
 ];

@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 2.1,
   "builds": [{ "src": "package.json", "use": "@now/next" }],
-  "alias": "kam-bowman"
+  "alias": "kamry-bowman"
 }

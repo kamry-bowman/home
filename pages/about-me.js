@@ -6,78 +6,43 @@ import Layout from '../components/Layout';
 import HeaderRow from '../components/HeaderRow';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import projectArr from '../data/projects';
 import MediaIcon from '../components/MediaIcon';
-import ProjectCard from '../components/ProjectCard';
 import CircleLine from '../components/CircleLine';
 
 import sizes from '../data/sizes';
 
-const Portfolio = styled.div`
-  .card {
-    max-width: 90%;
-    @media (max-width: ${sizes.tablet}) {
-      max-width: 100%;
-    }
+const AboutMe = styled.div`
+  .main-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 850px;
     margin: 0 auto;
-    h1 {
-      text-align: center;
-      font-size: 4rem;
-      @media (max-width: ${sizes.mobile}) {
-        font-size: 3.4rem;
+
+    & > div {
+      width: 49%;
+
+      @media (max-width: ${sizes.tablet}) {
+        width: 100%;
+        margin-bottom: 60px;
       }
     }
-
+  }
+  .main-txt {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Archivo Black', sans-serif;
+    padding: 120px;
+    display: flex;
+    justify-content: center;
+    h3 {
+      font-size: 3.8rem;
+      text-align: center;
+    }
     p {
-      font-family: arial, 'sans serif';
-      font-size: 2rem;
-      font-style: italic;
-    }
-
-    display: flex;
-    justify-content: center;
-    border-radius: 10px;
-    border: 15px solid black;
-
-    padding: 60px;
-    @media (max-width: ${sizes.tablet}) {
-      padding-left: 10%;
-      padding-right: 10%;
-      border-radius: 0;
-      border-width: 25px;
-    }
-
-    @media (max-width: ${sizes.mobile}) {
-      padding-left: 5%;
-      padding-right: 5%;
-      border-radius: 0;
-      border-width: 5%;
-    }
-
-    background-color: lightgray;
-  }
-
-  .intro-text {
-    min-width: 40%;
-    max-width: 500px;
-    margin: 80px auto 0;
-    display: flex;
-    flex-direction: column;
-
-    h1 {
-      margin-bottom: 40px;
-    }
-  }
-
-  .gallery {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 140px;
-
-    & > section {
-      margin: 80px 0;
+      padding-top: 30px;
+      max-width: 500px;
     }
   }
 `;
@@ -88,15 +53,15 @@ export default () => (
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Kamry Bowman Portfolio</title>
     </Head>
-    <Portfolio>
+    <AboutMe>
       <Header delay=".2s">
         {({ delay }) => (
           <React.Fragment>
             <h1 className="main-head">Kamry Bowman</h1>
             <nav>
               <HeaderRow delay={delay}>
-                <ActiveLink prefetch href="/portfolio">
-                  <a>Portfolio</a>
+                <ActiveLink prefetch href="/about-me">
+                  <a>About Me</a>
                 </ActiveLink>
               </HeaderRow>
               <HeaderRow barRight delay={delay}>
@@ -105,6 +70,11 @@ export default () => (
                 </ActiveLink>
               </HeaderRow>
               <HeaderRow delay={delay}>
+                <ActiveLink prefetch href="/portfolio">
+                  <a>Portfolio</a>
+                </ActiveLink>
+              </HeaderRow>
+              <HeaderRow barRight delay={delay}>
                 <ActiveLink href="https://glitteringglobofwisdom.com/">
                   <a>Blog</a>
                 </ActiveLink>
@@ -114,27 +84,30 @@ export default () => (
         )}
       </Header>
       <div className="main-content">
-        <section className="intro-text card">
-          <h1>Some Projects I've Worked On</h1>
+        <section className="main-txt">
+          <h3>I'm Kamry.</h3>
+          <p>{`I love working in javascript, and I especially love React. `}</p>
           <p>
-            Below is a collection of projects I've worked on. They use a variety
-            of tech stacks, though they all seem to involve some Javascript
-            somewhere!
+            {`I like finding ways to do things with CSS and HTML primitives, and keeping my markup semantic. I am strong in taking designs and implementing them faithfully while also making them resilient and responsive.`}
           </p>
+          <p>
+            {`On the server side, I love working in Node and Python. I have spent some time with PHP too but Node and Python are where I'm happiest.`}
+          </p>
+          <p>
+            {`I really love working on a team, burrowing into a problem set and bringing back a solution that work for everyone. Scalability and reusability saves lives\u2122.`}
+          </p>
+          <p>
+            {`Back in the day I studied economics and philosophy at the University of Michigan. Then I lived in Spain. Then I helped small businesses get SBA loans. Now I develop software. I live in Denver, CO.`}
+          </p>
+          <p>
+            {`It's satisfying to help others doing something that gets me excited every day.`}
+          </p>
+          <p>
+            {`If you want to chat, you can find me at kamry.bowman on gmail.`}
+          </p>
+          <CircleLine height="40px" cols={1} />
         </section>
-        <CircleLine height="160px" />
-        <section className="gallery">
-          {projectArr.map((project, index) => (
-            <div key={index}>
-              <ProjectCard className="card" project={project} />
-              {index !== projectArr.length - 1 ? (
-                <CircleLine height="160px" />
-              ) : (
-                undefined
-              )}
-            </div>
-          ))}
-        </section>
+        <section className="gallery" />
       </div>
       <Footer>
         <div className="social-box">
@@ -155,6 +128,6 @@ export default () => (
           <p>Copyright 2018 Kamry Bowman</p>
         </div>
       </Footer>
-    </Portfolio>
+    </AboutMe>
   </Layout>
 );

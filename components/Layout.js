@@ -18,6 +18,7 @@ injectGlobal`
 
   body {
     font-size: 1.6rem;
+    /* min-width: 360px; */
   }
   
   * {

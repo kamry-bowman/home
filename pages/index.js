@@ -51,6 +51,7 @@ const HomePage = styled.div`
     width: 100%;
     max-width: 850px;
     margin: 0 auto;
+    padding-top: 40px;
 
     & > div {
       width: 49%;
@@ -107,6 +108,11 @@ export default () => (
               </HeaderRow>
               <HeaderRow delay={delay}>
                 <a href="https://glitteringglobofwisdom.com">Blog</a>
+              </HeaderRow>
+              <HeaderRow barRight delay={delay}>
+                <Link href="/about-me">
+                  <a>About Me</a>
+                </Link>
               </HeaderRow>
             </nav>
           </React.Fragment>

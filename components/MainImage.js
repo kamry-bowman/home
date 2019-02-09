@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 const rotateLeft = keyframes`
   50% {
     transform-origin: 13% 62%;
-    transform: rotate(2deg);
+    transform: rotate(4deg);
   }
   100% {
     transform-origin: 13% 62%;
@@ -155,7 +155,7 @@ export default () => (
         stroke="#00010a"
         stroke-width=".925"
         stroke-linecap="square"
-        stroke-miterlimit="0"
+        strokeMiterLimit="0"
       />
       <path
         d="M248.38 42.275c-4.23 12.841-8.46 25.683-9.82 46.684-1.36 21.001.15 50.159 3.143 68.242 2.993 18.084 7.468 25.091 11.943 32.099"

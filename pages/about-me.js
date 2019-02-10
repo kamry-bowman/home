@@ -14,7 +14,7 @@ import sizes from '../data/sizes';
 const AboutMe = styled.div`
   .main-content {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
     max-width: 850px;
     margin: 0 auto;
@@ -33,7 +33,10 @@ const AboutMe = styled.div`
     justify-content: center;
     flex-direction: column;
     font-family: 'Archivo Black', sans-serif;
-    padding: 120px;
+    padding: 120px 10px;
+    @media (max-width: ${sizes.tablet}) {
+      padding: 20px;
+    }
     display: flex;
     justify-content: center;
     h3 {
@@ -43,6 +46,11 @@ const AboutMe = styled.div`
     p {
       padding-top: 30px;
       max-width: 500px;
+      margin: auto;
+
+      &:last-of-type {
+        padding-bottom: 30px;
+      }
     }
   }
 `;

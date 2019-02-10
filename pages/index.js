@@ -84,6 +84,10 @@ const HomePage = styled.div`
       font-size: 2.8rem;
     }
   }
+
+  nav {
+    margin-top: 50px;
+  }
 `;
 
 export default () => (

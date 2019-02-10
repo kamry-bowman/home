@@ -82,7 +82,7 @@ const Portfolio = styled.div`
   }
 `;
 
-const AutoScroll = styled('button')`
+const AutoScroll = styled('div')`
   position: fixed;
   top: 40px;
   left: 20px;
@@ -92,7 +92,7 @@ export default () => {
   const ref = useRef(null);
   const [position, setPosition] = useState(0);
   const [target, setTarget] = useState(null);
-  const points = useRef([]);
+  const points = useRef([0]);
 
   const updateScroll = () => {
     if (ref.current && window && position !== undefined) {
@@ -100,24 +100,29 @@ export default () => {
       let newPoint = 0;
 
       points.current.forEach((point, index) => {
-        console.log(distance, point);
         if (distance > point) {
           newPoint = index;
         }
       });
-      console.log(newPoint);
       setPosition(newPoint);
     }
   };
 
   const nextPosition = () => {
+    console.log('nextposition', position);
     const nextPoint = (position + 1) % points.current.length;
-    console.log('click', { position, target, nextPoint });
     setTarget(nextPoint);
   };
 
+  const prevPosition = () => {
+    const candidate = position - 1;
+    const prevPoint =
+      candidate > 0 ? candidate : points.current.length + candidate;
+    console.log('prevposition', prevPoint);
+    setTarget(prevPoint);
+  };
+
   useEffect(() => {
-    console.log(target);
     window.scrollTo({
       top: points.current[target] + 1,
       behavior: 'smooth',
@@ -130,7 +135,7 @@ export default () => {
     if (ref.current) {
       const cards = ref.current.querySelectorAll('.card');
       console.log(points.current);
-      points.current.splice(0, points.current.length);
+      points.current.splice(1, points.current.length - 1);
       cards.forEach(card => {
         points.current.push(card.offsetTop);
       });
@@ -144,7 +149,6 @@ export default () => {
 
   // initialize scroll behavior
   useEffect(() => {
-    console.log('stuff');
     document.addEventListener('scroll', updateScroll);
 
     return () => window.removeEventListener('scroll', updateScroll);
@@ -189,7 +193,10 @@ export default () => {
           )}
         </Header>
         <div className="main-content">
-          <AutoScroll onClick={nextPosition}>{'\u25BC'}</AutoScroll>
+          <AutoScroll>
+            <button onClick={nextPosition}>{'\u25BC'}</button>
+            <button onClick={prevPosition}>{'\u25B2'}</button>
+          </AutoScroll>
           <section className="intro-text card">
             <h1>Some Projects I've Worked On</h1>
             <p>

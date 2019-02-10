@@ -107,7 +107,7 @@ export default () => (
             {`I really love working on a team, burrowing into a problem set and bringing back a solution that work for everyone. Scalability and reusability saves lives\u2122.`}
           </p>
           <p>
-            {`Back in the day I studied economics and philosophy at the University of Michigan. Then I lived in Spain. Then I helped small businesses get SBA loans. Now I develop software. I live in Denver, CO.`}
+            {`Back in the day I studied economics and philosophy at the University of Michigan. Then I had a career helping small businesses get SBA loans. Now I develop software. I live in Denver, CO.`}
           </p>
           <p>
             {`It's satisfying to help others doing something that gets me excited every day.`}

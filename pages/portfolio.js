@@ -92,7 +92,10 @@ export default () => (
       <Header delay=".2s">
         {({ delay }) => (
           <React.Fragment>
-            <h1 className="main-head">Kamry Bowman</h1>
+            <h1 className="main-head">
+              {' '}
+              <a href="/">Kamry Bowman</a>
+            </h1>
             <nav>
               <HeaderRow delay={delay}>
                 <ActiveLink prefetch href="/portfolio">
@@ -105,6 +108,11 @@ export default () => (
                 </ActiveLink>
               </HeaderRow>
               <HeaderRow delay={delay}>
+                <ActiveLink prefetch href="/about-me">
+                  <a>About Me</a>
+                </ActiveLink>
+              </HeaderRow>
+              <HeaderRow barRight delay={delay}>
                 <ActiveLink href="https://glitteringglobofwisdom.com/">
                   <a>Blog</a>
                 </ActiveLink>

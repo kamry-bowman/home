@@ -37,30 +37,11 @@ const Header = styled.div`
   }
 
   a {
-    font-size: 4rem;
-    padding: 1.8rem;
-    color: black;
-    border: 3px solid black;
     text-decoration: none;
-    text-align: center;
+    color: black;
 
-    @media (max-width: ${sizes.mobile}) {
-      width: 80%;
-    }
-
-    &:hover {
-      color: white;
-      background-color: black;
-    }
-
-    &.active {
-      color: white;
-      background-color: black;
-
-      @media (min-width: ${sizes.mobile}) {
-        font-size: 5rem;
-        padding: 3rem;
-      }
+    &:visited {
+      color: black;
     }
   }
 `;

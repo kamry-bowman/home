@@ -65,7 +65,9 @@ export default () => (
       <Header delay=".2s">
         {({ delay }) => (
           <React.Fragment>
-            <h1 className="main-head">Kamry Bowman</h1>
+            <h1 className="main-head">
+              <a href="/">Kamry Bowman</a>
+            </h1>
             <nav>
               <HeaderRow delay={delay}>
                 <ActiveLink prefetch href="/about-me">

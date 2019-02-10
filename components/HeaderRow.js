@@ -42,6 +42,34 @@ const HeaderRow = styled.div`
   animation-delay: ${props => (props.delay ? `0s, ${props.delay}` : '0s')};
   animation-fill-mode: forwards;
 
+  a {
+    font-size: 4rem;
+    padding: 1.8rem;
+    color: black;
+    border: 3px solid black;
+    text-decoration: none;
+    text-align: center;
+
+    @media (max-width: ${sizes.mobile}) {
+      width: 80%;
+    }
+
+    &:hover {
+      color: white;
+      background-color: black;
+    }
+
+    &.active {
+      color: white;
+      background-color: black;
+
+      @media (min-width: ${sizes.mobile}) {
+        font-size: 5rem;
+        padding: 3rem;
+      }
+    }
+  }
+
   @media (max-width: ${sizes.tablet}) {
     margin-top: 50px;
     margin-bottom: 50px;

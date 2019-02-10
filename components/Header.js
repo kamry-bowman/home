@@ -39,10 +39,6 @@ const Header = styled.div`
   a {
     text-decoration: none;
     color: black;
-
-    &:visited {
-      color: black;
-    }
   }
 `;
 

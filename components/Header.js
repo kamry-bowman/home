@@ -22,6 +22,7 @@ const Header = styled.div`
     font-size: 6.6rem;
     padding-left: 15px;
     padding-right: 15px;
+    border-left: 8px solid black;
 
     @media (max-width: ${sizes.tablet}) {
       padding-left: 2%;
@@ -33,6 +34,7 @@ const Header = styled.div`
       padding-left: 0;
       text-align: end;
       font-size: 4.8rem;
+      border-left: none;
     }
   }
 

@@ -96,26 +96,25 @@ const ProjectCard = styled.section.attrs({
 export default ({
   className = '',
   project: { name, description, technology, url, img },
-}) =>
-  console.log(className) || (
-    <ProjectCard className={className}>
-      <div className="text-content">
-        <h1>{name}</h1>
-        <p>{description}</p>
-        <section className="tech">
-          <h2>Technology</h2>
-          <ul>
-            {technology.map((tech, index) => (
-              <li key={index}>{tech}</li>
-            ))}
-          </ul>
-        </section>
-      </div>
-      <div className="image-content">
-        <a href={url}>
-          <img src={`/static/${img}`} alt="" />
-        </a>
-        <a href={url}>Visit</a>
-      </div>
-    </ProjectCard>
-  );
+}) => (
+  <ProjectCard className={className}>
+    <div className="text-content">
+      <h1>{name}</h1>
+      <p>{description}</p>
+      <section className="tech">
+        <h2>Technology</h2>
+        <ul>
+          {technology.map((tech, index) => (
+            <li key={index}>{tech}</li>
+          ))}
+        </ul>
+      </section>
+    </div>
+    <div className="image-content">
+      <a href={url}>
+        <img src={`/static/${img}`} alt="" />
+      </a>
+      <a href={url}>Visit</a>
+    </div>
+  </ProjectCard>
+);

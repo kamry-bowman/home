@@ -153,7 +153,7 @@ export default () => (
           />
         </div>
         <div className="copyright">
-          <p>Copyright 2018 Kam Bowman</p>
+          <p>Copyright 2019 Kam Bowman</p>
         </div>
       </Footer>
     </HomePage>

@@ -27,7 +27,7 @@ export default [
     name: 'Towelify',
     description: `Named in honor of Douglas Adams, this Hackathon project is an opinionated React npm module aiming at creating some of Bootstrap's greatest hits using the render props pattern.`,
     technology: ['React', 'Storybook'],
-    url: 'https://github.com/TowelJS/Towelify',
+    url: 'https://www.npmjs.com/package/towelify',
     img: 'towelify-bw-300.gif',
   },
   {

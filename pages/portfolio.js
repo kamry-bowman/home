@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import ActiveLink from '../components/ActiveLink';
@@ -82,87 +82,156 @@ const Portfolio = styled.div`
   }
 `;
 
-export default () => (
-  <Layout>
-    <Head>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Kamry Bowman Portfolio</title>
-    </Head>
-    <Portfolio>
-      <Header delay=".2s">
-        {({ delay }) => (
-          <React.Fragment>
-            <h1 className="main-head">
-              {' '}
-              <a href="/">Kamry Bowman</a>
-            </h1>
-            <nav>
-              <HeaderRow delay={delay}>
-                <ActiveLink prefetch href="/portfolio">
-                  <a>Portfolio</a>
-                </ActiveLink>
-              </HeaderRow>
-              <HeaderRow barRight delay={delay}>
-                <ActiveLink prefetch href="/">
-                  <a>Home</a>
-                </ActiveLink>
-              </HeaderRow>
-              <HeaderRow delay={delay}>
-                <ActiveLink prefetch href="/about-me">
-                  <a>About Me</a>
-                </ActiveLink>
-              </HeaderRow>
-              <HeaderRow barRight delay={delay}>
-                <ActiveLink href="https://glitteringglobofwisdom.com/">
-                  <a>Blog</a>
-                </ActiveLink>
-              </HeaderRow>
-            </nav>
-          </React.Fragment>
-        )}
-      </Header>
-      <div className="main-content">
-        <section className="intro-text card">
-          <h1>Some Projects I've Worked On</h1>
-          <p>
-            Below is a collection of projects I've worked on. They use a variety
-            of tech stacks, though they all seem to involve some Javascript
-            somewhere!
-          </p>
-        </section>
-        <CircleLine height="160px" />
-        <section className="gallery">
-          {projectArr.map((project, index) => (
-            <div key={index}>
-              <ProjectCard className="card" project={project} />
-              {index !== projectArr.length - 1 ? (
-                <CircleLine height="160px" />
-              ) : (
-                undefined
-              )}
-            </div>
-          ))}
-        </section>
-      </div>
-      <Footer>
-        <div className="social-box">
-          <MediaIcon
-            imgsrc="/static/github.svg"
-            target="https://github.com/kamry-bowman"
-          />
-          <MediaIcon
-            imgsrc="/static/twitter.svg"
-            target="https://twitter.com/MispelledToyota"
-          />
-          <MediaIcon
-            imgsrc="/static/linkedin.svg"
-            target="https://linkedin.com/in/kamry-bowman"
-          />
+const AutoScroll = styled('button')`
+  position: fixed;
+  top: 40px;
+  left: 20px;
+`;
+
+export default () => {
+  const ref = useRef(null);
+  const [position, setPosition] = useState(0);
+  const [target, setTarget] = useState(null);
+  const points = useRef([]);
+
+  const updateScroll = () => {
+    if (ref.current && window && position !== undefined) {
+      const distance = window.scrollY || 0;
+      let newPoint = 0;
+
+      points.current.forEach((point, index) => {
+        console.log(distance, point);
+        if (distance > point) {
+          newPoint = index;
+        }
+      });
+      console.log(newPoint);
+      setPosition(newPoint);
+    }
+  };
+
+  const nextPosition = () => {
+    const nextPoint = (position + 1) % points.current.length;
+    console.log('click', { position, target, nextPoint });
+    setTarget(nextPoint);
+  };
+
+  useEffect(() => {
+    console.log(target);
+    window.scrollTo({
+      top: points.current[target] + 1,
+      behavior: 'smooth',
+    });
+  }, [target]);
+
+  // listener to update cards when ref updates
+  useEffect(() => {
+    console.log('update ref');
+    if (ref.current) {
+      const cards = ref.current.querySelectorAll('.card');
+      console.log(points.current);
+      points.current.splice(0, points.current.length);
+      cards.forEach(card => {
+        points.current.push(card.offsetTop);
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    console.log('butts', points);
+    updateScroll();
+  }, [points]);
+
+  // initialize scroll behavior
+  useEffect(() => {
+    console.log('stuff');
+    document.addEventListener('scroll', updateScroll);
+
+    return () => window.removeEventListener('scroll', updateScroll);
+  }, [ref.current, points]);
+
+  return (
+    <Layout>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Kamry Bowman Portfolio</title>
+      </Head>
+      <Portfolio>
+        <Header delay=".2s">
+          {({ delay }) => (
+            <React.Fragment>
+              <h1 className="main-head">
+                <a href="/">Kamry Bowman</a>
+              </h1>
+              <nav>
+                <HeaderRow delay={delay}>
+                  <ActiveLink prefetch href="/portfolio">
+                    <a>Portfolio</a>
+                  </ActiveLink>
+                </HeaderRow>
+                <HeaderRow barRight delay={delay}>
+                  <ActiveLink prefetch href="/">
+                    <a>Home</a>
+                  </ActiveLink>
+                </HeaderRow>
+                <HeaderRow delay={delay}>
+                  <ActiveLink prefetch href="/about-me">
+                    <a>About Me</a>
+                  </ActiveLink>
+                </HeaderRow>
+                <HeaderRow barRight delay={delay}>
+                  <ActiveLink href="https://glitteringglobofwisdom.com/">
+                    <a>Blog</a>
+                  </ActiveLink>
+                </HeaderRow>
+              </nav>
+            </React.Fragment>
+          )}
+        </Header>
+        <div className="main-content">
+          <AutoScroll onClick={nextPosition}>{'\u25BC'}</AutoScroll>
+          <section className="intro-text card">
+            <h1>Some Projects I've Worked On</h1>
+            <p>
+              Below is a collection of projects I've worked on. They use a
+              variety of tech stacks, though they all seem to involve some
+              Javascript somewhere!
+            </p>
+          </section>
+          <CircleLine height="160px" />
+          <section className="gallery" ref={ref}>
+            {projectArr.map((project, index) => (
+              <div key={index} ref={ref}>
+                <ProjectCard project={project} className="card" />
+                {index !== projectArr.length - 1 ? (
+                  <CircleLine height="160px" />
+                ) : (
+                  undefined
+                )}
+              </div>
+            ))}
+          </section>
         </div>
-        <div className="copyright">
-          <p>Copyright 2018 Kamry Bowman</p>
-        </div>
-      </Footer>
-    </Portfolio>
-  </Layout>
-);
+        <Footer>
+          <div className="social-box">
+            <MediaIcon
+              imgsrc="/static/github.svg"
+              target="https://github.com/kamry-bowman"
+            />
+            <MediaIcon
+              imgsrc="/static/twitter.svg"
+              target="https://twitter.com/MispelledToyota"
+            />
+            <MediaIcon
+              imgsrc="/static/linkedin.svg"
+              target="https://linkedin.com/in/kamry-bowman"
+            />
+          </div>
+          <div className="copyright">
+            <p>Copyright 2019 Kamry Bowman</p>
+          </div>
+        </Footer>
+      </Portfolio>
+    </Layout>
+  );
+};

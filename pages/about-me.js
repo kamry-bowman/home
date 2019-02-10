@@ -135,7 +135,7 @@ export default () => (
           />
         </div>
         <div className="copyright">
-          <p>Copyright 2018 Kamry Bowman</p>
+          <p>Copyright 2019 Kamry Bowman</p>
         </div>
       </Footer>
     </AboutMe>

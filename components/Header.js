@@ -19,7 +19,7 @@ const Header = styled.div`
   }
 
   h2 {
-    font-size: 4.6rem;
+    font-size: 6.6rem;
     padding-left: 15px;
     padding-right: 15px;
 

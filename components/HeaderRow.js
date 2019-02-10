@@ -87,6 +87,7 @@ const HeaderRow = styled.div`
     height: 26px;
     flex-grow: 1;
     background-color: black;
+    min-width: 60px;
 
     @media (max-width: ${sizes.tablet}) {
       height: 18px;

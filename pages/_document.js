@@ -17,6 +17,12 @@ export default class MyDocument extends Document {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link
+            rel="shortcut icon"
+            href="static/favicon.ico"
+            type="image/x-icon"
+          />
+          <link rel="icon" href="static/favicon.ico" type="image/x-icon" />
+          <link
             href="https://fonts.googleapis.com/css?family=Archivo+Black|Nova+Flat"
             rel="stylesheet"
           />

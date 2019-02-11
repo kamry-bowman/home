@@ -53,6 +53,11 @@ const HomePage = styled.div`
     margin: 0 auto;
     padding-top: 40px;
 
+    @media (max-width: ${sizes.mobile}) {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+
     & > div {
       width: 49%;
 
@@ -106,6 +111,19 @@ export default () => (
             <HeaderRow titleMorph="left" delay={delay}>
               <h2>Web Development</h2>
             </HeaderRow>
+            <div className="main-content">
+              <div className="main-img">
+                <MainImage />
+              </div>
+              <div className="main-txt">
+                <h3>I build websites with</h3>
+                <ul>
+                  {skillArr.map((skill, id) => (
+                    <li key={shortid.generate()}>{skill}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
             <nav>
               <HeaderRow barRight delay={delay}>
                 <Link href="/portfolio">
@@ -124,19 +142,7 @@ export default () => (
           </React.Fragment>
         )}
       </Header>
-      <div className="main-content">
-        <div className="main-img">
-          <MainImage />
-        </div>
-        <div className="main-txt">
-          <h3>I build websites with</h3>
-          <ul>
-            {skillArr.map((skill, id) => (
-              <li key={shortid.generate()}>{skill}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
+
       <Footer>
         <div className="social-box">
           <MediaIcon
@@ -153,7 +159,7 @@ export default () => (
           />
         </div>
         <div className="copyright">
-          <p>Copyright 2019 Kam Bowman</p>
+          <p>Copyright 2018 Kam Bowman</p>
         </div>
       </Footer>
     </HomePage>

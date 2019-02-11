@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import sizes from '../data/sizes';
 
 const Footer = styled.div`
   width: 100%;
@@ -13,25 +14,25 @@ const Footer = styled.div`
   align-items: center;
   font-family: arial, 'sans serif';
   padding: 25px;
+
+  @media (max-width: ${sizes.mobile}) {
+    margin-top: 0;
+  }
   .social-box {
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 30px 0 30px
+    padding: 30px 0 30px;
   }
   .copyright {
     display: flex;
     justify-content: center;
     align-items: flex-end;
 
-    p{
+    p {
     }
-  } 
+  }
 `;
 
-export default ({ children }) => (
-  <Footer>
-    {children}
-  </Footer>
-);
+export default ({ children }) => <Footer>{children}</Footer>;

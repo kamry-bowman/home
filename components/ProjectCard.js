@@ -7,7 +7,8 @@ const ProjectCard = styled.section.attrs({
   className: props => props.className || undefined,
 })`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 
   .image-content {
     display: flex;
@@ -32,6 +33,7 @@ const ProjectCard = styled.section.attrs({
       margin-top: 30px;
       color: black;
       font-size: 2.2rem;
+      text-align: center;
 
       &:visited {
         color: gray;
@@ -101,6 +103,12 @@ export default ({
     <div className="text-content">
       <h1>{name}</h1>
       <p>{description}</p>
+      <div className="image-content">
+        <a href={url}>
+          <img src={`/static/${img}`} alt="" />
+        </a>
+        <a href={url}>Visit</a>
+      </div>
       <section className="tech">
         <h2>Technology</h2>
         <ul>
@@ -109,12 +117,6 @@ export default ({
           ))}
         </ul>
       </section>
-    </div>
-    <div className="image-content">
-      <a href={url}>
-        <img src={`/static/${img}`} alt="" />
-      </a>
-      <a href={url}>Visit</a>
     </div>
   </ProjectCard>
 );

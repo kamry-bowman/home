@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import ActiveLink from '../components/ActiveLink';
 import Layout from '../components/Layout';
 import HeaderRow from '../components/HeaderRow';
@@ -13,6 +13,12 @@ import CircleLine from '../components/CircleLine';
 
 import sizes from '../data/sizes';
 
+const pulse = keyframes`
+  100% {
+    transform: scale(1.3);
+  }
+`;
+
 const Portfolio = styled.div`
   .card {
     max-width: 90%;
@@ -24,7 +30,7 @@ const Portfolio = styled.div`
       text-align: center;
       font-size: 4rem;
       @media (max-width: ${sizes.mobile}) {
-        font-size: 3.4rem;
+        font-size: 3rem;
       }
     }
 
@@ -37,7 +43,7 @@ const Portfolio = styled.div`
     display: flex;
     justify-content: center;
     border-radius: 10px;
-    border: 15px solid black;
+    border: 25px solid black;
 
     padding: 60px;
     @media (max-width: ${sizes.tablet}) {
@@ -76,6 +82,10 @@ const Portfolio = styled.div`
     align-items: center;
     margin-bottom: 140px;
 
+    @media (max-width: ${sizes.mobile}) {
+      margin-bottom: 0;
+    }
+
     & > section {
       margin: 80px 0;
     }
@@ -84,8 +94,41 @@ const Portfolio = styled.div`
 
 const AutoScroll = styled('div')`
   position: fixed;
-  top: 40px;
-  left: 20px;
+  bottom: 40px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+
+  button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    font-size: 40px;
+
+    &:focus {
+      outline: dotted 1px black;
+    }
+    &:hover {
+      animation: ${pulse} 0.5s linear alternate infinite;
+    }
+
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+    img {
+      width: 30px;
+    }
+  }
 `;
 
 export default () => {
@@ -109,7 +152,6 @@ export default () => {
   };
 
   const nextPosition = () => {
-    console.log('nextposition', position);
     const nextPoint = (position + 1) % points.current.length;
     setTarget(nextPoint);
   };
@@ -118,7 +160,6 @@ export default () => {
     const candidate = position - 1;
     const prevPoint =
       candidate > 0 ? candidate : points.current.length + candidate;
-    console.log('prevposition', prevPoint);
     setTarget(prevPoint);
   };
 
@@ -131,10 +172,8 @@ export default () => {
 
   // listener to update cards when ref updates
   useEffect(() => {
-    console.log('update ref');
     if (ref.current) {
       const cards = ref.current.querySelectorAll('.card');
-      console.log(points.current);
       points.current.splice(1, points.current.length - 1);
       cards.forEach(card => {
         points.current.push(card.offsetTop);
@@ -143,14 +182,12 @@ export default () => {
   }, []);
 
   useEffect(() => {
-    console.log('butts', points);
     updateScroll();
   }, [points]);
 
   // initialize scroll behavior
   useEffect(() => {
     document.addEventListener('scroll', updateScroll);
-
     return () => window.removeEventListener('scroll', updateScroll);
   }, [ref.current, points]);
 
@@ -192,10 +229,18 @@ export default () => {
             </React.Fragment>
           )}
         </Header>
-        <div className="main-content">
+        <div className="main-content" ref={ref}>
           <AutoScroll>
-            <button onClick={nextPosition}>{'\u25BC'}</button>
-            <button onClick={prevPosition}>{'\u25B2'}</button>
+            {position === 0 ? null : (
+              <button onClick={prevPosition}>
+                <img src="../static/up-arrow.svg" />
+              </button>
+            )}
+            {ref.current && position === points.current.length - 1 ? null : (
+              <button onClick={nextPosition}>
+                <img src="../static/down-arrow.svg" />
+              </button>
+            )}
           </AutoScroll>
           <section className="intro-text card">
             <h1>Some Projects I've Worked On</h1>
@@ -206,7 +251,7 @@ export default () => {
             </p>
           </section>
           <CircleLine height="160px" />
-          <section className="gallery" ref={ref}>
+          <section className="gallery">
             {projectArr.map((project, index) => (
               <div key={index} ref={ref}>
                 <ProjectCard project={project} className="card" />

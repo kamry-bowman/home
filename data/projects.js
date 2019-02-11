@@ -3,7 +3,7 @@ export default [
     name: 'Cadence Shift Scheduler',
     description: `Built out on a team of 5, this is full-stack web application features drag and drop shift scheduling for small businesses. It features an attractive design, shift validation, coverage calculation, and is supported by a combination of React, Firebase, and postgresql.`,
     url: 'http://getcadence.co',
-    img: 'cadence-bw-300.gif',
+    img: 'cadence-300.gif',
     technology: [
       'React',
       'Emotion',
@@ -21,14 +21,14 @@ export default [
       'A responsive small business website built using pure html, css, and vanilla javascript.',
     technology: ['HTML', 'CSS', 'Javascript'],
     url: 'https://kbowman-architecture.netlify.com',
-    img: 'arch-bw-300.gif',
+    img: 'arch-300x350.gif',
   },
   {
     name: 'Towelify',
     description: `Named in honor of Douglas Adams, this Hackathon project is an opinionated React npm module aiming at creating some of Bootstrap's greatest hits using the render props pattern.`,
     technology: ['React', 'Storybook'],
     url: 'https://www.npmjs.com/package/towelify',
-    img: 'towelify-bw-300.gif',
+    img: 'towelify-300.gif',
   },
   {
     name: 'Lambda Notes',
@@ -43,6 +43,6 @@ export default [
       'Jest',
     ],
     url: 'https://kam-lambda-notes.netlify.com/',
-    img: 'notes-bw-300.gif',
+    img: 'notes-300x350.gif',
   },
 ];

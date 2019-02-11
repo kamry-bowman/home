@@ -15,6 +15,7 @@ const Header = styled.div`
 
     @media (max-width: ${sizes.mobile}) {
       margin-left: 0;
+      font-size: 6.4rem;
     }
   }
 
@@ -33,7 +34,7 @@ const Header = styled.div`
     @media (max-width: ${sizes.mobile}) {
       padding-left: 0;
       text-align: end;
-      font-size: 4.8rem;
+      font-size: 4.2rem;
       border-left: none;
     }
   }

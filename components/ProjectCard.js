@@ -14,7 +14,11 @@ const ProjectCard = styled.section.attrs({
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 
+    a {
+      text-align: center;
+    }
     img {
       border: 40px solid black;
       border-radius: 15px;
@@ -28,16 +32,14 @@ const ProjectCard = styled.section.attrs({
         max-width: 90%;
       }
     }
+  }
+  a.text-link {
+    color: black;
+    font-size: 2.2rem;
+    text-align: center;
 
-    a {
-      margin-top: 30px;
-      color: black;
-      font-size: 2.2rem;
-      text-align: center;
-
-      &:visited {
-        color: gray;
-      }
+    &:visited {
+      color: gray;
     }
   }
 
@@ -107,8 +109,10 @@ export default ({
         <a href={url}>
           <img src={`/static/${img}`} alt="" />
         </a>
-        <a href={url}>Visit</a>
       </div>
+      <a className="text-link" href={url}>
+        Visit
+      </a>
       <section className="tech">
         <h2>Technology</h2>
         <ul>

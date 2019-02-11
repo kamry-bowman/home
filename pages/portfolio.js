@@ -179,7 +179,7 @@ export default () => {
         points.current.push(card.offsetTop);
       });
     }
-  }, []);
+  }, [ref]);
 
   useEffect(() => {
     updateScroll();

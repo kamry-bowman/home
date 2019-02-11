@@ -240,7 +240,7 @@ export default () => {
         </Header>
         <div className="main-content" ref={ref}>
           <AutoScroll>
-            {ref.current || position === 0 ? null : (
+            {!ref.current || position === 0 ? null : (
               <button onClick={prevPosition}>
                 <img src="../static/up-arrow.svg" />
               </button>

@@ -135,7 +135,16 @@ export default () => {
   const ref = useRef(null);
   const [position, setPosition] = useState(0);
   const [target, setTarget] = useState(null);
-  const points = useRef([0]);
+
+  // initialize points with a top of page "scrollIntoView" function to have similar
+  // API as DOM nodes for specific elements
+  const points = useRef([
+    {
+      scrollIntoView: () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
+    },
+  ]);
 
   const updateScroll = () => {
     if (ref.current && window && position !== undefined) {
@@ -143,7 +152,7 @@ export default () => {
       let newPoint = 0;
 
       points.current.forEach((point, index) => {
-        if (distance > point.offsetTop) {
+        if (distance > point.offsetTop - 10) {
           newPoint = index;
         }
       });
@@ -159,20 +168,14 @@ export default () => {
   const prevPosition = () => {
     const candidate = position - 1;
     const prevPoint =
-      candidate > 0 ? candidate : points.current.length + candidate;
+      candidate >= 0 ? candidate : points.current.length + candidate;
     setTarget(prevPoint);
   };
 
   useEffect(() => {
-    if (points.current && target) {
+    if (points.current && typeof target === 'number') {
       const current = points.current[target];
-      console.log(current, target);
-      if (current === 0) {
-        window.scrollTo({ top: 0 });
-      } else {
-        console.log(current);
-        current.scrollIntoView();
-      }
+      current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }, [target]);
 

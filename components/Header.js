@@ -32,7 +32,8 @@ const Header = styled.div`
     }
 
     @media (max-width: ${sizes.mobile}) {
-      padding-left: 0;
+      padding-left: 2px;
+      padding-right: 2px;
       text-align: end;
       font-size: 4.2rem;
       border-left: none;

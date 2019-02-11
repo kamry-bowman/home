@@ -19,6 +19,10 @@ const AboutMe = styled.div`
     max-width: 850px;
     margin: 0 auto;
 
+    h3 {
+      padding-bottom: 40px;
+    }
+
     & > div {
       width: 49%;
 
@@ -36,6 +40,9 @@ const AboutMe = styled.div`
     padding: 120px 10px;
     max-width: 500px;
     margin: auto;
+    p {
+      font-size: 2rem;
+    }
 
     @media (max-width: ${sizes.tablet}) {
       padding: 20px;

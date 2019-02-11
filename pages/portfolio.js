@@ -143,7 +143,7 @@ export default () => {
       let newPoint = 0;
 
       points.current.forEach((point, index) => {
-        if (distance > point) {
+        if (distance > point.offsetTop) {
           newPoint = index;
         }
       });
@@ -164,10 +164,16 @@ export default () => {
   };
 
   useEffect(() => {
-    window.scrollTo({
-      top: points.current[target] + 1,
-      behavior: 'smooth',
-    });
+    if (points.current && target) {
+      const current = points.current[target];
+      console.log(current, target);
+      if (current === 0) {
+        window.scrollTo({ top: 0 });
+      } else {
+        console.log(current);
+        current.scrollIntoView();
+      }
+    }
   }, [target]);
 
   // listener to update cards when ref updates
@@ -176,10 +182,10 @@ export default () => {
       const cards = ref.current.querySelectorAll('.card');
       points.current.splice(1, points.current.length - 1);
       cards.forEach(card => {
-        points.current.push(card.offsetTop);
+        points.current.push(card);
       });
     }
-  }, [ref]);
+  }, []);
 
   useEffect(() => {
     updateScroll();

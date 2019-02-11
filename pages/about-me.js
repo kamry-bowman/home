@@ -109,10 +109,10 @@ export default () => (
             {`I like finding ways to do things with CSS and HTML primitives, and keeping my markup semantic. I am strong in taking designs and implementing them faithfully while also making them resilient and responsive.`}
           </p>
           <p>
-            {`On the server side, I love working in Node and Python. I have spent some time with PHP too but Node and Python are where I'm happiest.`}
+            {`On the server side, I love working in Node and Python. I have spent some time in other languages, but Node and Python are where I'm happiest.`}
           </p>
           <p>
-            {`I really love working on a team, burrowing into a problem set and bringing back a solution that work for everyone. Scalability and reusability saves lives\u2122.`}
+            {`I really love working on a team, burrowing into a problem set and bringing back a solution that works for everyone. Scalability and reusability saves lives\u2122.`}
           </p>
           <p>
             {`I studied economics and philosophy at the University of Michigan. Then I had a career helping small businesses get SBA loans. Now I develop software. I live in Denver, CO.`}

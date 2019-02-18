@@ -45,11 +45,10 @@ const Portfolio = styled.div`
     border-radius: 10px;
     border: 25px solid black;
 
-    padding: 60px;
+    padding: 60px 160px;
     @media (max-width: ${sizes.tablet}) {
-      padding-left: 10%;
-      padding-right: 10%;
-      border-radius: 0;
+      padding-left: 54px;
+      padding-right: 54px;
       border-width: 25px;
     }
 

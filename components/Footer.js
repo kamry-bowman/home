@@ -5,7 +5,7 @@ import sizes from '../data/sizes';
 const Footer = styled.div`
   width: 100%;
   max-width: 850px;
-  margin: 20px auto 0;
+  margin: 120px auto 0;
   background-color: black;
   color: white;
   display: flex;

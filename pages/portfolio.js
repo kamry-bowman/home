@@ -19,6 +19,23 @@ const pulse = keyframes`
     transform: scale(1.3);
   }
 `;
+const upDown = keyframes`
+  0% {
+    transform: translate(0);
+  }
+  49.99% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(0, 8px);
+  }
+  99.99% {
+    transform: translate(0, 8px);
+  }
+  100% {
+    transform: translate(0);
+  }
+`;
 
 const Portfolio = styled.div`
   .card {
@@ -123,6 +140,10 @@ const AutoScroll = styled('div')`
     -moz-osx-font-smoothing: inherit;
     -webkit-appearance: none;
     font-size: 40px;
+
+    &.attention-move {
+      animation: ${upDown} 0.8s infinite;
+    }
 
     &:focus {
       outline: dotted 1px black;
@@ -259,7 +280,10 @@ export default () => {
               </button>
             )}
             {ref.current && position === points.current.length - 1 ? null : (
-              <button onClick={nextPosition}>
+              <button
+                onClick={nextPosition}
+                className={position === 0 ? 'attention-move' : undefined}
+              >
                 <img src="../static/down-arrow.svg" />
               </button>
             )}

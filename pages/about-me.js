@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MediaIcon from '../components/MediaIcon';
 import CircleLine from '../components/CircleLine';
+import ExitIcon from '../components/ExitIcon';
 
 import sizes from '../data/sizes';
 
@@ -97,7 +98,10 @@ export default () => (
               </HeaderRow>
               <HeaderRow barRight delay={delay}>
                 <ActiveLink href="https://glitteringglobofwisdom.com/">
-                  <a>Blog</a>
+                  <a>
+                    {'Blog'}
+                    <ExitIcon className="icon" />
+                  </a>
                 </ActiveLink>
               </HeaderRow>
             </nav>

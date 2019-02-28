@@ -10,6 +10,7 @@ import projectArr from '../data/projects';
 import MediaIcon from '../components/MediaIcon';
 import ProjectCard from '../components/ProjectCard';
 import CircleLine from '../components/CircleLine';
+import ExitIcon from '../components/ExitIcon';
 
 import sizes from '../data/sizes';
 
@@ -240,7 +241,10 @@ export default () => {
                 </HeaderRow>
                 <HeaderRow barRight delay={delay}>
                   <ActiveLink href="https://glitteringglobofwisdom.com/">
-                    <a>Blog</a>
+                    <a>
+                      {'Blog'}
+                      <ExitIcon className="icon" />
+                    </a>
                   </ActiveLink>
                 </HeaderRow>
               </nav>

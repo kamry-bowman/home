@@ -50,6 +50,17 @@ const HeaderRow = styled.div`
     text-decoration: none;
     text-align: center;
 
+    .icon {
+      height: 2rem;
+      width: auto;
+      padding-left: 8px;
+      stroke: black;
+
+      position: relative;
+      top: -8px;
+      left: 4px;
+    }
+
     @media (max-width: ${sizes.mobile}) {
       width: 80%;
     }
@@ -57,6 +68,10 @@ const HeaderRow = styled.div`
     &:hover {
       color: white;
       background-color: black;
+
+      .icon {
+        stroke: white;
+      }
     }
 
     &.active {

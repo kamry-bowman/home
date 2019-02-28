@@ -11,6 +11,7 @@ import MediaIcon from '../components/MediaIcon';
 import skillArr from '../data/skills';
 import sizes from '../data/sizes';
 import MainImage from '../components/MainImage';
+import ExitIcon from '../components/ExitIcon';
 
 const dropIn = keyframes`
   0% {
@@ -115,12 +116,12 @@ export default () => (
           <React.Fragment>
             <h1 className="main-head">
               <a href="/">
-                Kamry <span class="thin">Bowman</span>
+                Kamry <span className="thin">Bowman</span>
               </a>
             </h1>
             <HeaderRow titleMorph="left" delay={delay}>
               <h2>
-                <span class="thin">Web</span> Development
+                <span className="thin">Web</span> Development
               </h2>
             </HeaderRow>
             <div className="main-content">
@@ -148,7 +149,10 @@ export default () => (
                 </Link>
               </HeaderRow>
               <HeaderRow barRight delay={delay}>
-                <a href="https://glitteringglobofwisdom.com">Blog</a>
+                <a href="https://glitteringglobofwisdom.com">
+                  {'Blog'}
+                  <ExitIcon className="icon" />
+                </a>
               </HeaderRow>
             </nav>
           </React.Fragment>

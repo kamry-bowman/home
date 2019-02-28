@@ -36,12 +36,14 @@ const AboutMe = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 900;
     padding: 120px 10px;
     max-width: 500px;
     margin: auto;
     p {
       font-size: 2rem;
+      font-weight: 300;
     }
 
     @media (max-width: ${sizes.tablet}) {

@@ -45,6 +45,9 @@ const HomePage = styled.div`
     visibility: hidden;
     animation: ${fadeIn} 1s ease-out 0.3s forwards;
   }
+  .thin {
+    font-weight: 300;
+  }
   .main-content {
     display: flex;
     flex-wrap: wrap;
@@ -106,10 +109,14 @@ export default () => (
         {({ delay }) => (
           <React.Fragment>
             <h1 className="main-head">
-              <a href="/">Kamry Bowman</a>
+              <a href="/">
+                Kamry <span class="thin">Bowman</span>
+              </a>
             </h1>
             <HeaderRow titleMorph="left" delay={delay}>
-              <h2>Web Development</h2>
+              <h2>
+                <span class="thin">Web</span> Development
+              </h2>
             </HeaderRow>
             <div className="main-content">
               <div className="main-img">
@@ -159,7 +166,7 @@ export default () => (
           />
         </div>
         <div className="copyright">
-          <p>Copyright 2018 Kam Bowman</p>
+          <p>Copyright 2019 Kam Bowman</p>
         </div>
       </Footer>
     </HomePage>

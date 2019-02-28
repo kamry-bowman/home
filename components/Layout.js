@@ -13,7 +13,8 @@ injectGlobal`
   }
 
   h1, h2, h3, h4, a {
-    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 900;
   }
 
   body {

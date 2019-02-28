@@ -23,7 +23,7 @@ export default class MyDocument extends Document {
           />
           <link rel="icon" href="static/favicon.ico" type="image/x-icon" />
           <link
-            href="https://fonts.googleapis.com/css?family=Archivo+Black|Nova+Flat"
+            href="https://fonts.googleapis.com/css?family=Nova+Flat|Source+Sans+Pro:300,900"
             rel="stylesheet"
           />
           {this.props.styleTags}

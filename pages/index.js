@@ -57,8 +57,8 @@ const HomePage = styled.div`
     padding-top: 40px;
 
     @media (max-width: ${sizes.mobile}) {
-      padding-left: 4px;
-      padding-right: 4px;
+      padding-left: 15px;
+      padding-right: 15px;
     }
 
     & > div {
@@ -67,6 +67,10 @@ const HomePage = styled.div`
       @media (max-width: ${sizes.tablet}) {
         width: 100%;
         margin-bottom: 60px;
+      }
+
+      @media (max-width: ${sizes.mobile}) {
+        margin-bottom: 0;
       }
     }
   }
@@ -82,7 +86,8 @@ const HomePage = styled.div`
     justify-content: center;
     flex-direction: column;
     visibility: hidden;
-    font-family: 'Nova Flat', 'sans serif';
+    font-family: 'Source Sans Pro', 'sans serif';
+    font-weight: 300;
     animation: ${hide} 0.3s;
     animation: ${fadeIn} 0.6s ease-out 0.3s forwards;
     h3 {
@@ -138,12 +143,12 @@ export default () => (
                 </Link>
               </HeaderRow>
               <HeaderRow delay={delay}>
-                <a href="https://glitteringglobofwisdom.com">Blog</a>
-              </HeaderRow>
-              <HeaderRow barRight delay={delay}>
                 <Link href="/about-me">
                   <a>About Me</a>
                 </Link>
+              </HeaderRow>
+              <HeaderRow barRight delay={delay}>
+                <a href="https://glitteringglobofwisdom.com">Blog</a>
               </HeaderRow>
             </nav>
           </React.Fragment>

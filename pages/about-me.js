@@ -43,7 +43,8 @@ const AboutMe = styled.div`
     margin: auto;
     p {
       font-size: 2rem;
-      font-weight: 300;
+      line-height: 3.5rem;
+      font-weight: 400;
     }
 
     @media (max-width: ${sizes.tablet}) {

@@ -21,32 +21,19 @@ const pulse = keyframes`
 
 const Portfolio = styled.div`
   .card {
-    max-width: 90%;
-    @media (max-width: ${sizes.tablet}) {
-      max-width: 100%;
-    }
+    /* max-width: 80%; */
+    width: auto;
     margin: 0 auto;
-    h1 {
-      text-align: center;
-      font-size: 4rem;
-      @media (max-width: ${sizes.mobile}) {
-        font-size: 3rem;
-      }
-    }
-
-    p {
-      font-family: arial, 'sans serif';
-      font-size: 2rem;
-      font-style: italic;
-    }
 
     display: flex;
     justify-content: center;
     border-radius: 10px;
     border: 25px solid black;
 
-    padding: 60px 160px;
+    padding: 60px;
+
     @media (max-width: ${sizes.tablet}) {
+      width: 100%;
       padding-left: 54px;
       padding-right: 54px;
       border-width: 25px;
@@ -59,18 +46,41 @@ const Portfolio = styled.div`
       border-width: 5%;
     }
 
-    background-color: lightgray;
+    h1 {
+      text-align: center;
+      font-size: 4rem;
+      @media (max-width: ${sizes.mobile}) {
+        font-size: 3rem;
+      }
+    }
+
+    p {
+      font-family: arial, 'sans serif';
+      font-size: 2rem;
+      font-style: italic;
+      padding-bottom: 3rem;
+      line-height: 3rem;
+    }
   }
 
   .intro-text {
     min-width: 40%;
-    max-width: 500px;
+    max-width: 700px;
     margin: 80px auto 0;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
 
     h1 {
-      margin-bottom: 40px;
+      margin-bottom: 60px;
+      width: 100%;
+    }
+
+    p {
+      min-width: 400px;
+      @media (max-width: ${sizes.mobile}) {
+        min-width: 200px;
+      }
     }
   }
 
@@ -252,10 +262,10 @@ export default () => {
           </AutoScroll>
           <section className="intro-text card">
             <h1>Some Projects I've Worked On</h1>
+            <p>Below is a collection of projects I've worked on.</p>
             <p>
-              Below is a collection of projects I've worked on. They use a
-              variety of tech stacks, though they all seem to involve some
-              Javascript somewhere!
+              They use a variety of tech stacks, though they all seem to involve
+              some Javascript somewhere!
             </p>
           </section>
           <CircleLine height="160px" />

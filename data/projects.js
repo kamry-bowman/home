@@ -1,7 +1,10 @@
 export default [
   {
     name: 'Cadence Shift Scheduler',
-    description: `Built out on a team of 5, this is full-stack web application features drag and drop shift scheduling for small businesses. It features an attractive design, shift validation, coverage calculation, and is supported by a combination of React, Firebase, and postgresql.`,
+    description: [
+      `Built out on a team of 5, this is full-stack web application features drag and drop shift scheduling for small businesses.`,
+      `It features an attractive design, shift validation, coverage calculation, and is supported by a combination of React, Firebase, and postgresql.`,
+    ],
     url: 'http://getcadence.co',
     img: 'cadence-300.gif',
     technology: [
@@ -52,5 +55,5 @@ export default [
     technology: ['HTML', 'CSS', 'Javascript'],
     url: 'https://kbowman-architecture.netlify.com',
     img: 'arch-300x350.gif',
-  }
+  },
 ];

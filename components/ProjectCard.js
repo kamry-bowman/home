@@ -37,6 +37,7 @@ const ProjectCard = styled.section.attrs({
     color: black;
     font-size: 2.2rem;
     text-align: center;
+    padding-top: 40px;
 
     &:visited {
       color: gray;
@@ -44,12 +45,15 @@ const ProjectCard = styled.section.attrs({
   }
 
   .text-content {
-    width: 360px;
-    padding: 0 20px;
+    width: 500px;
+    padding: 0 20px 40px;
     display: flex;
 
-    @media (max-width: ${sizes.mobile}) {
+    @media (max-width: ${sizes.tablet}) {
       width: 100%;
+    }
+
+    @media (max-width: ${sizes.mobile}) {
       padding: 0 2.5%;
     }
 
@@ -63,19 +67,12 @@ const ProjectCard = styled.section.attrs({
         padding-bottom: 10px;
       }
     }
-
-    & > p {
-      text-align: center;
-    }
   }
 
   .tech {
-    h2,
-    li {
-      font-family: 'Nova Flat', 'sans serif';
-    }
-
+    padding-top: 40px;
     text-align: center;
+    font-family: 'Source Sans Pro', 'sans serif';
 
     h2 {
       margin-bottom: 1rem;
@@ -84,6 +81,7 @@ const ProjectCard = styled.section.attrs({
     li {
       font-size: 2rem;
       list-style-type: none;
+      font-weight: 300;
     }
   }
 
@@ -104,23 +102,27 @@ export default ({
   <ProjectCard className={className}>
     <div className="text-content">
       <h1>{name}</h1>
-      <p>{description}</p>
-      <div className="image-content">
-        <a href={url}>
-          <img src={`/static/${img}`} alt="" />
-        </a>
-      </div>
-      <a className="text-link" href={url}>
-        Visit
-      </a>
-      <section className="tech">
-        <h2>Technology</h2>
-        <ul>
-          {technology.map((tech, index) => (
-            <li key={index}>{tech}</li>
-          ))}
-        </ul>
-      </section>
+      {typeof description === 'string' ? (
+        <p>{description}</p>
+      ) : (
+        description.map((item, i) => <p key={i}>{item}</p>)
+      )}
     </div>
+    <div className="image-content">
+      <a href={url}>
+        <img src={`/static/${img}`} alt="" />
+      </a>
+    </div>
+    <section className="tech">
+      <h2>Technology</h2>
+      <ul>
+        {technology.map((tech, index) => (
+          <li key={index}>{tech}</li>
+        ))}
+      </ul>
+    </section>
+    <a className="text-link" href={url}>
+      Visit
+    </a>
   </ProjectCard>
 );

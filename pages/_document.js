@@ -18,7 +18,7 @@ export default class MyDocument extends Document {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta
             property="og:image"
-            content="kamrybowman.com/static/kam-avi.png"
+            content="//kamrybowman.com/static/kam-avi.png"
           />
           <link
             rel="shortcut icon"

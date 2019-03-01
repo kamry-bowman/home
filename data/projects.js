@@ -20,8 +20,10 @@ export default [
   },
   {
     name: 'Lambda Notes',
-    description: `Note Management System built using React and Redux front-end, with an Express back-end supported by postgresql.
-    I implemented doubly linked list as the data structure to support ordered cards, which was a lot of fun.`,
+    description: [
+      `Note Management System built using React and Redux front-end, with an Express back-end supported by postgresql.`,
+      `I also implemented doubly linked list as the data structure to support ordered cards, which was a lot of fun.`,
+    ],
     technology: [
       'React',
       'Styled Components',

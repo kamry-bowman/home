@@ -2,7 +2,7 @@ export default [
   {
     name: 'Cadence Shift Scheduler',
     description: [
-      `Built out on a team of 5, this is full-stack web application features drag and drop shift scheduling for small businesses.`,
+      `Built by me along with the Cadence team, this full-stack web application features drag and drop shift scheduling for small businesses.`,
       `It features an attractive design, shift validation, coverage calculation, and is supported by a combination of React, Firebase, and postgresql.`,
     ],
     url: 'http://getcadence.co',
@@ -45,7 +45,7 @@ export default [
   },
   {
     name: 'Towelify',
-    description: `Named in honor of Douglas Adams, this Hackathon project is an opinionated React npm module aiming at creating some of Bootstrap's greatest hits using the render props pattern.`,
+    description: `Named in honor of Douglas Adams, this Hackathon project is an opinionated React npm module aiming at recreating some of Bootstrap's greatest hits using the render props pattern.`,
     technology: ['React', 'React Storybook', 'NPM'],
     url: 'https://www.npmjs.com/package/towelify',
     img: 'towelify-300.gif',

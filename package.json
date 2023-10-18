@@ -1,6 +1,9 @@
 {
   "name": "kam-web-dev",
   "version": "1.0.0",
+  "engines": {
+    "node": "~16"
+  },
   "scripts": {
     "next": "next",
     "dev": "next",

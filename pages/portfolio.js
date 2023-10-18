@@ -260,14 +260,6 @@ export default () => {
                     <a>About Me</a>
                   </ActiveLink>
                 </HeaderRow>
-                <HeaderRow barRight delay={delay}>
-                  <ActiveLink href="https://glitteringglobofwisdom.com/">
-                    <a>
-                      {'Blog'}
-                      <ExitIcon className="icon" />
-                    </a>
-                  </ActiveLink>
-                </HeaderRow>
               </nav>
             </React.Fragment>
           )}

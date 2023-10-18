@@ -148,12 +148,6 @@ export default () => (
                   <a>About Me</a>
                 </Link>
               </HeaderRow>
-              <HeaderRow barRight delay={delay}>
-                <a href="https://glitteringglobofwisdom.com">
-                  {'Blog'}
-                  <ExitIcon className="icon" />
-                </a>
-              </HeaderRow>
             </nav>
           </React.Fragment>
         )}

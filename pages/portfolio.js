@@ -41,7 +41,6 @@ const Portfolio = styled.div`
   .card {
     /* max-width: 80%; */
     width: auto;
-    margin: 0 auto;
 
     display: flex;
     justify-content: center;

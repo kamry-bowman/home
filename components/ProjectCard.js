@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import sizes from '../data/sizes';
 
-const ProjectCard = styled.section.attrs({
+const Projec = styled.section.attrs({
   className: props => props.className || undefined,
 })`
   display: flex;
@@ -98,8 +98,10 @@ const ProjectCard = styled.section.attrs({
 export default ({
   className = '',
   project: { name, description, technology, url, img },
-}) => (
-  <ProjectCard className={className}>
+}) => {
+  const image = <img src={`/static/${img}`} alt="" />
+  return (
+  <Projec className={className}>
     <div className="text-content">
       <h1>{name}</h1>
       {typeof description === 'string' ? (
@@ -108,11 +110,15 @@ export default ({
         description.map((item, i) => <p key={i}>{item}</p>)
       )}
     </div>
-    <div className="image-content">
-      <a href={url}>
-        <img src={`/static/${img}`} alt="" />
-      </a>
-    </div>
+      <div className="image-content">
+      {
+      url ? (
+        <a href={url}>
+          {image}
+          </a>
+      ) : image
+      }
+      </div>
     <section className="tech">
       <h2>Technology</h2>
       <ul>
@@ -121,8 +127,14 @@ export default ({
         ))}
       </ul>
     </section>
-    <a className="text-link" href={url}>
-      Visit
-    </a>
-  </ProjectCard>
-);
+    {
+      url && (
+      <a className="text-link" href={url}>
+        Visit
+      </a>
+      )
+    }
+  </Projec>
+  )
+}
+;

@@ -4,6 +4,7 @@ import styled, { keyframes } from 'styled-components';
 import ActiveLink from '../components/ActiveLink';
 import HeaderRow from '../components/HeaderRow';
 import Header from '../components/Header';
+import Layout from '../components/Layout'
 import Footer from '../components/Footer';
 import projectArr from '../data/projects';
 import MediaIcon from '../components/MediaIcon';
@@ -230,7 +231,7 @@ export default () => {
   }, [ref.current, points]);
 
   return (
-      <>
+      <Layout>
       <Head>
         <title>Kamry Bowman Portfolio</title>
       </Head>
@@ -319,6 +320,6 @@ export default () => {
           </div>
         </Footer>
       </Portfolio>
-      </>
+      </Layout>
   );
 };

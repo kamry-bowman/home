@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
+import Layout from "../components/Layout"
 import ActiveLink from '../components/ActiveLink';
 import HeaderRow from '../components/HeaderRow';
 import Header from '../components/Header';
@@ -67,7 +68,7 @@ const AboutMe = styled.div`
 `;
 
 export default () => (
-  <>
+  <Layout>
     <Head>
       <title>Kamry Bowman Portfolio</title>
     </Head>
@@ -144,5 +145,5 @@ export default () => (
         </div>
       </Footer>
     </AboutMe>
-    </>
+    </Layout>
 );

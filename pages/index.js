@@ -7,6 +7,7 @@ import HeaderRow from '../components/HeaderRow';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MediaIcon from '../components/MediaIcon';
+import Layout from "../components/Layout"
 import skillArr from '../data/skills';
 import sizes from '../data/sizes';
 import MainImage from '../components/MainImage';
@@ -104,7 +105,7 @@ const HomePage = styled.div`
 `;
 
 export default () => (
-    <>
+    <Layout>
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Kamry Bowman</title>
@@ -172,5 +173,5 @@ export default () => (
         </div>
       </Footer>
     </HomePage>
-    </>
+    </Layout>
 );

@@ -3,7 +3,6 @@ import Head from 'next/head';
 import styled, { keyframes } from 'styled-components';
 import Link from 'next/link';
 import shortid from 'shortid';
-import Layout from '../components/Layout';
 import HeaderRow from '../components/HeaderRow';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -105,7 +104,7 @@ const HomePage = styled.div`
 `;
 
 export default () => (
-  <Layout>
+    <>
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Kamry Bowman</title>
@@ -173,5 +172,5 @@ export default () => (
         </div>
       </Footer>
     </HomePage>
-  </Layout>
+    </>
 );

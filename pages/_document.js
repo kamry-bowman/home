@@ -1,19 +1,39 @@
-import Document, { Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+import Document, { Html, Head, Main, NextScript} from 'next/document';
+import { createGlobalStyle } from 'styled-components'
 
-export default class MyDocument extends Document {
-  static getInitialProps({ renderPage }) {
-    const sheet = new ServerStyleSheet();
-    const page = renderPage(App => props =>
-      sheet.collectStyles(<App {...props} />)
-    );
-    const styleTags = sheet.getStyleElement();
-    return { ...page, styleTags };
+const GlobalStyle = createGlobalStyle`
+  html {
+    font-size: 10px;
   }
 
+  h1, h2, h3, h4 {
+    margin-block-end: 0;
+    margin-block-start: 0;
+    inline-block-end: 0;
+    inline-block-start: 0;
+  }
+
+  h1, h2, h3, h4, a {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 900;
+  }
+
+  body {
+    font-size: 1.6rem;
+    /* min-width: 360px; */
+  }
+  
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+`
+
+export default class MyDocument extends Document {
   render() {
     return (
-      <html>
+      <Html>
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta property="og:title" content="Kamry Bowman" />
@@ -31,13 +51,11 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900"
             rel="stylesheet"
           />
-          {this.props.styleTags}
         </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </html>
+        <GlobalStyle />
+        <Main />
+        <NextScript />
+      </Html>
     );
   }
 }

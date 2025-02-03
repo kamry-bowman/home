@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import React from 'react';
 import sizes from '../data/sizes';
 
@@ -33,8 +33,8 @@ const HeaderRow = styled.div`
     props.barRight ? '10px 0 10px auto' : '10px auto 10px 0'};
   min-height: 60px;
   vertical-align: middle;
-  animation-name: ${props => `${
-    props.delay ? `${wait(Boolean(props.barRight))}, ` : null
+  animation-name: ${props => css`${
+    props.delay ? css`${wait(Boolean(props.barRight))}, ` : null
   }${slide(Boolean(props.barRight))};
     `};
   animation-duration: ${props =>

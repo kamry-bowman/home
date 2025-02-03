@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import styled, { keyframes } from 'styled-components';
 import ActiveLink from '../components/ActiveLink';
-import Layout from '../components/Layout';
 import HeaderRow from '../components/HeaderRow';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -231,7 +230,7 @@ export default () => {
   }, [ref.current, points]);
 
   return (
-    <Layout>
+      <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Kamry Bowman Portfolio</title>
@@ -321,6 +320,6 @@ export default () => {
           </div>
         </Footer>
       </Portfolio>
-    </Layout>
+      </>
   );
 };

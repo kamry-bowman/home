@@ -72,7 +72,6 @@ const Projec = styled.section.attrs({
   .tech {
     padding-top: 40px;
     text-align: center;
-    font-family: 'Source Sans Pro', 'sans serif';
 
     h2 {
       margin-bottom: 1rem;

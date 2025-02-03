@@ -88,7 +88,7 @@ const HeaderRow = styled.div`
   @media (max-width: ${sizes.tablet}) {
     margin-top: 50px;
     margin-bottom: 50px;
-    max-width: ${props => (props.$titleMorph ? '100%' : '98%')};
+    max-width: ${props => (props$titleMorph ? '100%' : '98%')};
   }
 
   @media (max-width: ${sizes.mobile}) {

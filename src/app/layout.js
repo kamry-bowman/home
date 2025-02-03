@@ -1,5 +1,7 @@
-import { Source_Sans_3} from "next/font/google";
-import StyledComponentsRegistry from "@/lib/registry";
+"use client"
+
+import { Source_Sans_3 } from "next/font/google";
+import StyledComponentsRegistry from "@/app/registry";
 import "./globals.css";
 
 const sourceSans = Source_Sans_3({
@@ -16,4 +18,4 @@ export default function RootLayout({ children }) {
       </body>
     </html>
   );
-}
+} 

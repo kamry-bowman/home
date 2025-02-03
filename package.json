@@ -1,24 +1,26 @@
 {
-  "name": "kam-web-dev",
-  "version": "1.2.0",
+  "name": "home",
+  "version": "0.1.0",
+  "private": true,
   "engines": {
     "node": "~18"
   },
   "scripts": {
-    "next": "next",
-    "dev": "next",
+    "dev": "next dev --turbopack",
     "build": "next build",
-    "export": "next export",
     "start": "next start",
-    "debug": "next --inspect",
+    "lint": "next lint",
     "now-build": "next build && next export -o dist"
   },
   "dependencies": {
     "next": "15.1.6",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "shortid": "^2.2.13",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "styled-components": "^6.1.14"
   },
-  "license": "ISC"
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.6"
+  }
 }

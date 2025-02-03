@@ -232,7 +232,6 @@ export default () => {
   return (
       <>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Kamry Bowman Portfolio</title>
       </Head>
       <Portfolio>

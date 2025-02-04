@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import sizes from '@/data/sizes';
+import MediaIcon from "@/components/MediaIcon";
+import gitHubImg from "../../public/github.svg";
+import twitterImg from "../../public/twitter.svg";
+import linkedInImg from "../../public/linkedin.svg";
+
 
 const Footer = styled.div`
   width: 100%;
@@ -35,4 +40,26 @@ const Footer = styled.div`
   }
 `;
 
-export default ({ children }) => <Footer>{children}</Footer>;
+export default function FooterComponent() {
+      return (<Footer>
+        <div className="social-box">
+          <MediaIcon
+            imgsrc={gitHubImg}
+            target="https://github.com/kamry-bowman"
+          />
+          <MediaIcon
+            imgsrc={twitterImg}
+            target="https://twitter.com/MispelledToyota"
+            height={50}
+          />
+          <MediaIcon
+            imgsrc={linkedInImg}
+            target="https://linkedin.com/in/kamry-bowman"
+          />
+        </div>
+        <div className="copyright">
+          <p>Copyright 2025 Kamry Bowman</p>
+        </div>
+      </Footer>
+      )
+};

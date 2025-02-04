@@ -32,7 +32,8 @@ const SVG = styled.svg`
   }
 `;
 
-export default () => (
+export default function MainImage () {
+  return  (
   <SVG viewBox="0 0 250.033 227.226" id="svg8">
     <g id="layer1" transform="translate(-32.78 -30.762)">
       <rect
@@ -273,4 +274,5 @@ export default () => (
       </g>
     </g>
   </SVG>
-);
+)
+};

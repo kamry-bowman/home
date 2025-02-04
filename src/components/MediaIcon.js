@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Image from "next/image";
 
 const MediaIcon = styled.div`
   width: 50px;
@@ -9,10 +10,12 @@ const MediaIcon = styled.div`
   }
 `;
 
-export default props => (
-  <MediaIcon>
-    <a href={props.target}>
-      <img src={props.imgsrc}/>
-    </a>
-  </MediaIcon>
-);
+export default function MediaIconComponent(props) {
+  return (
+    <MediaIcon>
+      <a href={props.target}>
+        <Image src={props.imgsrc} alt={""}/>
+      </a>
+    </MediaIcon>
+  );
+}

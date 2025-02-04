@@ -8,4 +8,4 @@ const CircleLine = styled.div`
   margin: 0 auto;
 `;
 
-export default props => <CircleLine {...props} />;
+export default CircleLine;

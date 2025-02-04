@@ -118,11 +118,13 @@ const HeaderRow = styled.div`
   }
 `;
 
-export default ({ $barRight, $delay = 0, $titleMorph, children, ...rest }) => (
+export default function HeaderRowComponent ({ $barRight, $delay = 0, $titleMorph, children, ...rest }) {
+  return (
   <HeaderRow $barRight={Boolean($barRight)} $delay={$delay} $titleMorph={$titleMorph}>
     {typeof children === 'function'
       ? children({ $barRight, ...rest })
       : children}
     <div className="blackBar" />
   </HeaderRow>
-);
+)
+};

@@ -46,7 +46,7 @@ const Header = styled.div`
   }
 `;
 
-export default props => {
+export default function HeaderComponent(props) {
   const { children, theme, ...rest } = props;
   return (
     <Header theme={theme}>

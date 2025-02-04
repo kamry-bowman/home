@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Image from "next/image";
 
 import sizes from '@/data/sizes';
 
@@ -94,11 +95,11 @@ const Projec = styled.section.attrs({
   }
 `;
 
-export default ({
+export default function ProjectCard({
   className = '',
   project: { name, description, technology, url, img },
-}) => {
-  const image = <img src={`/${img}`} alt="" />
+}) {
+  const image = <Image src={img} alt="" unoptimized />
   return (
   <Projec className={className}>
     <div className="text-content">

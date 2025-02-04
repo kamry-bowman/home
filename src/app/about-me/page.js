@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import styled from 'styled-components';
 import ActiveLink from '@/components/ActiveLink';
 import HeaderRow from '@/components/HeaderRow';
@@ -9,7 +10,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MediaIcon from '@/components/MediaIcon';
 import CircleLine from '@/components/CircleLine';
-import ExitIcon from '@/components/ExitIcon';
 
 import sizes from '@/data/sizes';
 
@@ -67,8 +67,8 @@ const AboutMe = styled.div`
   }
 `;
 
-export default () => (
-  <>
+export default function AboutMePage () {
+  return (<>
     <Head>
       <title>Kamry Bowman Portfolio</title>
     </Head>
@@ -77,7 +77,7 @@ export default () => (
         {({ delay }) => (
           <React.Fragment>
             <h1 className="main-head">
-              <a href="/">Kamry Bowman</a>
+              <Link href="/">Kamry Bowman</Link>
             </h1>
             <nav>
               <HeaderRow delay={delay}>
@@ -101,7 +101,7 @@ export default () => (
       </Header>
       <div className="main-content">
         <section className="main-txt">
-          <h3>I'm Kamry.</h3>
+          <h3>{`I'm Kamry.`}</h3>
           <p>{`I like using software to deliver real world goods and services better and cheaper.`}</p>
           <p>{`I have experience in JavaScript, React, Angular, Java, Go, and Python.`}</p>
           <p>
@@ -117,25 +117,8 @@ export default () => (
         </section>
         <section className="gallery" />
       </div>
-      <Footer>
-        <div className="social-box">
-          <MediaIcon
-            imgsrc="/github.svg"
-            target="https://github.com/kamry-bowman"
-          />
-          <MediaIcon
-            imgsrc="/twitter.svg"
-            target="https://twitter.com/MispelledToyota"
-          />
-          <MediaIcon
-            imgsrc="/linkedin.svg"
-            target="https://linkedin.com/in/kamry-bowman"
-          />
-        </div>
-        <div className="copyright">
-          <p>Copyright 2025 Kamry Bowman</p>
-        </div>
-      </Footer>
+      <Footer />
     </AboutMe>
     </>
-);
+  );
+}

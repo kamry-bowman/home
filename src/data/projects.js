@@ -1,11 +1,18 @@
-export default [
+import useAutoHooks from "../../public/use-autohooks-300.gif";
+import cadence from "../../public/cadence-300.gif";
+import notesImg from "../../public/notes-300x350.gif";
+import towelify from "../../public/towelify-300.gif";
+import archImg from "../../public/arch-300x350.gif";
+
+
+const data = [
   {
     name: 'use-autoscroll',
     description:
       "This is a React custom hook I published to celebrate the release of hooks. It's a useful pattern to have generalized, and it's even used on this page!",
     url: 'https://www.npmjs.com/package/use-autoscroll',
     technology: ['React', 'React hooks', 'NPM', 'React Storybook'],
-    img: 'use-autohooks-300.gif',
+    img: useAutoHooks,
   },
   {
     name: 'Cadence Shift Scheduler',
@@ -13,7 +20,7 @@ export default [
       `Built by me along with the Cadence team, this full-stack web application features drag and drop shift scheduling for small businesses.`,
       `It features an attractive design, shift validation, coverage calculation, and is supported by a combination of React, Firebase, and postgresql.`,
     ],
-    img: 'cadence-300.gif',
+    img: cadence,
     technology: [
       'React',
       'Emotion',
@@ -39,19 +46,21 @@ export default [
       'Postgresql',
       'Jest',
     ],
-    img: 'notes-300x350.gif',
+    img: notesImg,
   },
   {
     name: 'Towelify',
     description: `Named in honor of Douglas Adams, this Hackathon project is an opinionated React npm module aiming at recreating some of Bootstrap's greatest hits using the render props pattern.`,
     technology: ['React', 'React Storybook', 'NPM'],
-    img: 'towelify-300.gif',
+    img: towelify,
   },
   {
     name: 'S & J Architecture',
     description:
       'A responsive small business website built using pure html, css, and vanilla javascript.',
     technology: ['HTML', 'CSS', 'Javascript'],
-    img: 'arch-300x350.gif',
+    img: archImg,
   },
 ];
+
+export default data;

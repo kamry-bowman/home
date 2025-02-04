@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default props => (
+export default function ExitIcon (props) {
+  return (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 157.33 155.525"
@@ -18,3 +19,4 @@ export default props => (
     </g>
   </svg>
 );
+}

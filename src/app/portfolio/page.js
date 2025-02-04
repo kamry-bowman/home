@@ -1,18 +1,20 @@
 "use client"
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Head from 'next/head';
+import Link from "next/link";
+import Image from "next/image";
 import styled, { keyframes } from 'styled-components';
 import ActiveLink from '@/components/ActiveLink';
 import HeaderRow from '@/components/HeaderRow';
 import Header from '@/components/Header';
-import Layout from '@/components/Layout'
 import Footer from '@/components/Footer';
 import projectArr from '@/data/projects';
 import MediaIcon from '@/components/MediaIcon';
 import ProjectCard from '@/components/ProjectCard';
 import CircleLine from '@/components/CircleLine';
-import ExitIcon from '@/components/ExitIcon';
+import downArrow from '../../../public/down-arrow.svg';
+import upArrow from "../../../public/up-arrow.svg";
 
 import sizes from '@/data/sizes';
 
@@ -163,7 +165,7 @@ const AutoScroll = styled('div')`
   }
 `;
 
-export default () => {
+export default function PortfolioPage () {
   const ref = useRef(null);
   const [position, setPosition] = useState(0);
   const [target, setTarget] = useState(null);
@@ -178,7 +180,7 @@ export default () => {
     },
   ]);
 
-  const updateScroll = () => {
+  const updateScroll = useCallback(() => {
     if (ref.current && window && position !== undefined) {
       const distance = window.scrollY || 0;
       let newPoint = 0;
@@ -190,7 +192,7 @@ export default () => {
       });
       setPosition(newPoint);
     }
-  };
+  }, [position]);
 
   const nextPosition = () => {
     const nextPoint = (position + 1) % points.current.length;
@@ -224,13 +226,13 @@ export default () => {
 
   useEffect(() => {
     updateScroll();
-  }, [points]);
+  }, [points, updateScroll]);
 
   // initialize scroll behavior
   useEffect(() => {
     document.addEventListener('scroll', updateScroll);
     return () => window.removeEventListener('scroll', updateScroll);
-  }, [ref.current, points]);
+  }, [points, updateScroll]);
 
   return (
       <>
@@ -242,7 +244,7 @@ export default () => {
           {({ delay }) => (
             <React.Fragment>
               <h1 className="main-head">
-                <a href="/">Kamry Bowman</a>
+                <Link href="/">Kamry Bowman</Link>
               </h1>
               <nav>
                 <HeaderRow delay={delay}>
@@ -268,7 +270,7 @@ export default () => {
           <AutoScroll>
             {!ref.current || position === 0 ? null : (
               <button onClick={prevPosition}>
-                <img src="up-arrow.svg" />
+                <Image src={upArrow} alt="Up"/>
               </button>
             )}
             {ref.current && position === points.current.length - 1 ? null : (
@@ -276,13 +278,13 @@ export default () => {
                 onClick={nextPosition}
                 className={position === 0 ? 'attention-move' : undefined}
               >
-                <img src="down-arrow.svg" />
+                <Image src={downArrow} alt="down"  />
               </button>
             )}
           </AutoScroll>
           <section className="intro-text card">
-            <h1>Some Projects I've Worked On</h1>
-            <p>Below is a collection of projects I've worked on.</p>
+            <h1>{"Some Projects I've Worked On"}</h1>
+            <p>{"Below is a collection of projects I've worked on."}</p>
             <p>
               Try out my auto scroll npm package in the bottom-right corner.
             </p>
@@ -301,25 +303,7 @@ export default () => {
             ))}
           </section>
         </div>
-        <Footer>
-          <div className="social-box">
-            <MediaIcon
-              imgsrc="/github.svg"
-              target="https://github.com/kamry-bowman"
-            />
-            <MediaIcon
-              imgsrc="/twitter.svg"
-              target="https://twitter.com/MispelledToyota"
-            />
-            <MediaIcon
-              imgsrc="/linkedin.svg"
-              target="https://linkedin.com/in/kamry-bowman"
-            />
-          </div>
-          <div className="copyright">
-            <p>Copyright 2025 Kamry Bowman</p>
-          </div>
-        </Footer>
+        <Footer />
       </Portfolio>
       </>
   );

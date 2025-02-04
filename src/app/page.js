@@ -7,7 +7,6 @@ import Link from 'next/link';
 import HeaderRow from '@/components/HeaderRow';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import MediaIcon from '@/components/MediaIcon';
 import skillArr from '@/data/skills';
 import sizes from '@/data/sizes';
 import MainImage from '@/components/MainImage';
@@ -102,7 +101,8 @@ const HomePage = styled.div`
   }
 `;
 
-export default () => (
+export default function IndexPage () {
+  return (
     <>
         <Head>
           <meta property="og:title" content="Kamry Bowman" />
@@ -122,9 +122,9 @@ export default () => (
         {({ $delay }) => (
           <React.Fragment>
             <h1 className="main-head">
-              <a href="/">
+              <Link href="/">
                 Kamry <span className="thin">Bowman</span>
-              </a>
+              </Link>
             </h1>
             <HeaderRow $titleMorph="left" $delay={$delay}>
               <h2>
@@ -159,26 +159,8 @@ export default () => (
           </React.Fragment>
         )}
       </Header>
-
-      <Footer>
-        <div className="social-box">
-          <MediaIcon
-            imgsrc="github.svg"
-            target="https://github.com/kamry-bowman"
-          />
-          <MediaIcon
-            imgsrc="twitter.svg"
-            target="https://twitter.com/MispelledToyota"
-          />
-          <MediaIcon
-            imgsrc="linkedin.svg"
-            target="https://linkedin.com/in/kamry-bowman"
-          />
-        </div>
-        <div className="copyright">
-          <p>Copyright 2025 Kamry Bowman</p>
-        </div>
-      </Footer>
     </HomePage>
+      <Footer />
     </>
-);
+  )
+}

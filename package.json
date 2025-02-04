@@ -10,7 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "now-build": "next build && next export -o dist"
+    "now-build": "next build"
   },
   "dependencies": {
     "next": "15.1.6",

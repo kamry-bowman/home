@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import sizes from '../data/sizes';
+import sizes from '@/data/sizes';
 
 const Projec = styled.section.attrs({
   className: props => props.className || undefined,
@@ -98,7 +98,7 @@ export default ({
   className = '',
   project: { name, description, technology, url, img },
 }) => {
-  const image = <img src={`/static/${img}`} alt="" />
+  const image = <img src={`/${img}`} alt="" />
   return (
   <Projec className={className}>
     <div className="text-content">

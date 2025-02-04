@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import sizes from '../data/sizes';
+import sizes from '@/data/sizes';
 
 const Header = styled.div`
   h1 {

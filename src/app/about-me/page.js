@@ -1,15 +1,17 @@
+"use client"
+
 import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
-import ActiveLink from '../components/ActiveLink';
-import HeaderRow from '../components/HeaderRow';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import MediaIcon from '../components/MediaIcon';
-import CircleLine from '../components/CircleLine';
-import ExitIcon from '../components/ExitIcon';
+import ActiveLink from '@/components/ActiveLink';
+import HeaderRow from '@/components/HeaderRow';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import MediaIcon from '@/components/MediaIcon';
+import CircleLine from '@/components/CircleLine';
+import ExitIcon from '@/components/ExitIcon';
 
-import sizes from '../data/sizes';
+import sizes from '@/data/sizes';
 
 const AboutMe = styled.div`
   .main-content {
@@ -36,7 +38,6 @@ const AboutMe = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    font-family: 'Source Sans Pro', sans-serif;
     font-weight: 900;
     padding: 120px 10px;
     max-width: 500px;
@@ -84,7 +85,7 @@ export default () => (
                   <a>About Me</a>
                 </ActiveLink>
               </HeaderRow>
-              <HeaderRow barRight delay={delay}>
+              <HeaderRow $barRight delay={delay}>
                 <ActiveLink prefetch href="/">
                   <a>Home</a>
                 </ActiveLink>
@@ -101,21 +102,13 @@ export default () => (
       <div className="main-content">
         <section className="main-txt">
           <h3>I'm Kamry.</h3>
-          <p>{`I love working in javascript, and I especially love React. `}</p>
-          <p>
-            {`I like finding ways to do things with CSS and HTML primitives, and keeping my markup semantic. I am strong in taking designs and implementing them faithfully while also making them resilient and responsive.`}
-          </p>
-          <p>
-            {`On the server side, I love working in Node and Python. I have spent some time in other languages, but Node and Python are where I'm happiest.`}
-          </p>
+          <p>{`I like using software to deliver real world goods and services better and cheaper.`}</p>
+          <p>{`I have experience in JavaScript, React, Angular, Java, Go, and Python.`}</p>
           <p>
             {`I really love working on a team, burrowing into a problem set and bringing back a solution that works for everyone. Scalability and reusability saves lives\u2122.`}
           </p>
           <p>
-            {`I studied economics and philosophy at the University of Michigan. Then I had a career helping small businesses get SBA loans. Now I develop software. I live in Denver, CO.`}
-          </p>
-          <p>
-            {`It's satisfying to help others doing something that gets me excited every day.`}
+            {`I studied economics and philosophy at the University of Michigan. I have developed software for health insurance, warehouse management systems, and logistics fullfillment.`}
           </p>
           <p>
             {`If you want to chat, you can find me at kamry.bowman on gmail.`}
@@ -127,20 +120,20 @@ export default () => (
       <Footer>
         <div className="social-box">
           <MediaIcon
-            imgsrc="/static/github.svg"
+            imgsrc="/github.svg"
             target="https://github.com/kamry-bowman"
           />
           <MediaIcon
-            imgsrc="/static/twitter.svg"
+            imgsrc="/twitter.svg"
             target="https://twitter.com/MispelledToyota"
           />
           <MediaIcon
-            imgsrc="/static/linkedin.svg"
+            imgsrc="/linkedin.svg"
             target="https://linkedin.com/in/kamry-bowman"
           />
         </div>
         <div className="copyright">
-          <p>Copyright 2019 Kamry Bowman</p>
+          <p>Copyright 2025 Kamry Bowman</p>
         </div>
       </Footer>
     </AboutMe>

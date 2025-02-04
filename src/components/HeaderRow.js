@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 import React from 'react';
-import sizes from '../data/sizes';
+import sizes from '@/data/sizes';
 
 const wait = (fromRight = false) => {
   return keyframes`

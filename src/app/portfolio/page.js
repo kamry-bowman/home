@@ -1,18 +1,20 @@
+"use client"
+
 import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import styled, { keyframes } from 'styled-components';
-import ActiveLink from '../components/ActiveLink';
-import HeaderRow from '../components/HeaderRow';
-import Header from '../components/Header';
-import Layout from '../components/Layout'
-import Footer from '../components/Footer';
-import projectArr from '../data/projects';
-import MediaIcon from '../components/MediaIcon';
-import ProjectCard from '../components/ProjectCard';
-import CircleLine from '../components/CircleLine';
-import ExitIcon from '../components/ExitIcon';
+import ActiveLink from '@/components/ActiveLink';
+import HeaderRow from '@/components/HeaderRow';
+import Header from '@/components/Header';
+import Layout from '@/components/Layout'
+import Footer from '@/components/Footer';
+import projectArr from '@/data/projects';
+import MediaIcon from '@/components/MediaIcon';
+import ProjectCard from '@/components/ProjectCard';
+import CircleLine from '@/components/CircleLine';
+import ExitIcon from '@/components/ExitIcon';
 
-import sizes from '../data/sizes';
+import sizes from '@/data/sizes';
 
 const pulse = keyframes`
   100% {
@@ -248,7 +250,7 @@ export default () => {
                     <a>Portfolio</a>
                   </ActiveLink>
                 </HeaderRow>
-                <HeaderRow barRight delay={delay}>
+                <HeaderRow $barRight delay={delay}>
                   <ActiveLink prefetch href="/">
                     <a>Home</a>
                   </ActiveLink>
@@ -266,7 +268,7 @@ export default () => {
           <AutoScroll>
             {!ref.current || position === 0 ? null : (
               <button onClick={prevPosition}>
-                <img src="../static/up-arrow.svg" />
+                <img src="up-arrow.svg" />
               </button>
             )}
             {ref.current && position === points.current.length - 1 ? null : (
@@ -274,7 +276,7 @@ export default () => {
                 onClick={nextPosition}
                 className={position === 0 ? 'attention-move' : undefined}
               >
-                <img src="../static/down-arrow.svg" />
+                <img src="down-arrow.svg" />
               </button>
             )}
           </AutoScroll>
@@ -282,8 +284,7 @@ export default () => {
             <h1>Some Projects I've Worked On</h1>
             <p>Below is a collection of projects I've worked on.</p>
             <p>
-              They use a variety of tech stacks, though they all seem to involve
-              some Javascript somewhere!
+              Try out my auto scroll npm package in the bottom-right corner.
             </p>
           </section>
           <CircleLine height="160px" />
@@ -303,20 +304,20 @@ export default () => {
         <Footer>
           <div className="social-box">
             <MediaIcon
-              imgsrc="/static/github.svg"
+              imgsrc="/github.svg"
               target="https://github.com/kamry-bowman"
             />
             <MediaIcon
-              imgsrc="/static/twitter.svg"
+              imgsrc="/twitter.svg"
               target="https://twitter.com/MispelledToyota"
             />
             <MediaIcon
-              imgsrc="/static/linkedin.svg"
+              imgsrc="/linkedin.svg"
               target="https://linkedin.com/in/kamry-bowman"
             />
           </div>
           <div className="copyright">
-            <p>Copyright 2019 Kamry Bowman</p>
+            <p>Copyright 2025 Kamry Bowman</p>
           </div>
         </Footer>
       </Portfolio>

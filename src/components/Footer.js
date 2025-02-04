@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import sizes from '../data/sizes';
+import sizes from '@/data/sizes';
 
 const Footer = styled.div`
   width: 100%;

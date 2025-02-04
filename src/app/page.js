@@ -8,8 +8,8 @@ import HeaderRow from '@/components/HeaderRow';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MediaIcon from '@/components/MediaIcon';
-import skillArr from '../data/skills';
-import sizes from '../data/sizes';
+import skillArr from '@/data/skills';
+import sizes from '@/data/sizes';
 import MainImage from '@/components/MainImage';
 
 const dropIn = keyframes`
@@ -86,7 +86,6 @@ const HomePage = styled.div`
     justify-content: center;
     flex-direction: column;
     visibility: hidden;
-    font-family: 'Source Sans Pro', 'sans serif';
     font-weight: 300;
     animation: ${hide} 0.3s;
     animation: ${fadeIn} 0.6s ease-out 0.3s forwards;

@@ -1,15 +1,16 @@
 import React from 'react';
-import { withRouter } from 'next/router';
+import { useRouter } from 'next/navigation'
 import Link from 'next/link';
 
-const ActiveLink = withRouter(({ router, children, ...props }) => {
+const ActiveLink = ({children, ...props}) => {
+  const router = useRouter();
   return (
-    (<Link {...props} legacyBehavior>
+    (<Link router={router} {...props} legacyBehavior>
       {React.cloneElement(React.Children.only(children), {
         className: router.pathname === props.href ? 'active' : undefined,
       })}
     </Link>)
   );
-});
+};
 
 export default ActiveLink;

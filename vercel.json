@@ -1,6 +1,3 @@
 {
-  "version": 2,
-  "builds": [{ "src": "package.json", "use": "@now/static-build" }],
-  "alias": "kamrybowman.com",
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
+

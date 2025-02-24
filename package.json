@@ -3,14 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "~18"
+    "node": "~22"
   },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "now-build": "next build"
+    "start": "serve out",
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "15.1.6",
@@ -21,6 +20,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "eslint": "^9",
-    "eslint-config-next": "^15.2.0-canary.37"
+    "eslint-config-next": "^15.2.0-canary.37",
+    "serve": "^14.2.4"
   }
 }
